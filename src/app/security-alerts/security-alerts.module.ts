@@ -9,7 +9,7 @@ import { SecurityAlertsComponent } from './pages/security-alerts/security-alerts
     SecurityAlertsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     SecurityAlertsComponent

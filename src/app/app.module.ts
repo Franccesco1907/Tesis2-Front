@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SecurityAlertsModule } from './security-alerts/security-alerts.module';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 
@@ -15,8 +14,7 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    SecurityAlertsModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
