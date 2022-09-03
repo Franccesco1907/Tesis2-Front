@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-security-alerts',
   templateUrl: './security-alerts.component.html',
