@@ -1,6 +1,32 @@
 .alert-subtitle {
   font-size: 0.775rem;
 }
+
 .alert-info {
   font-size: 0.775rem;
+}
+
+.edit-button {
+  background-color: #E5B819;
+  border: none;
+  border-radius: 10%;
+  left: 200px;
+  position: relative;
+  top: -210px;
+}
+
+.trash-button {
+  background-color: #E74C3C;
+  border: none;
+  border-radius: 10%;
+  left: 210px;
+  outline: none;
+  position: relative;
+  top: -210px;
+}
+
+.card-info {
+  padding: 0rem 1rem;
+  position: relative;
+  top: 1rem;
 }

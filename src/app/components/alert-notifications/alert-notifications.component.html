@@ -1,70 +1,72 @@
 <div class="card" style="width: 18rem">
-  <div class="card-body col">
+  <div class="card-body card-info">
     <div class="col">
       <div class="row">
         <div class="col-4">
-          <h6 class="card-subtitle lh-1 mb-2 alert-subtitle">Código:</h6>
+          <h6 class="card-subtitle lh-1 pb-2 alert-subtitle">Código:</h6>
         </div>
         <div class="col-8">
-          <p class="card-subtitle lh-1 mb-2 alert-info">{{ alert.code }}</p>
+          <p class="card-subtitle lh-1 pb-2 alert-info">{{ alert.code }}</p>
         </div>
       </div>
       <div class="row">
         <div class="col-4">
-          <h6 class="card-subtitle mb-2 alert-subtitle">Incidente:</h6>
+          <h6 class="card-subtitle pb-2 alert-subtitle">Incidente:</h6>
         </div>
         <div class="col-8">
-          <p class="card-subtitle lh-1 mb-2 alert-info">{{ alert.incident }}</p>
+          <p class="card-subtitle lh-1 pb-2 alert-info">{{ alert.incident }}</p>
         </div>
       </div>
       <div class="row">
         <div class="col-4">
-          <h6 class="card-subtitle mb-2 alert-subtitle">Gravedad:</h6>
+          <h6 class="card-subtitle pb-2 alert-subtitle">Gravedad:</h6>
         </div>
         <div class="col-8">
-          <p class="card-subtitle lh-1 mb-2 alert-info">{{ alert.severity }}</p>
+          <p class="card-subtitle lh-1 pb-2 alert-info">{{ alert.severity }}</p>
         </div>
       </div>
       <div class="row">
         <div class="col-4">
-          <h6 class="card-subtitle mb-2 alert-subtitle">Sector:</h6>
+          <h6 class="card-subtitle pb-2 alert-subtitle">Sector:</h6>
         </div>
         <div class="col-8">
-          <p class="card-subtitle lh-1 mb-2 alert-info">{{ alert.sector }}</p>
+          <p class="card-subtitle lh-1 pb-2 alert-info">{{ alert.sector }}</p>
         </div>
       </div>
       <div class="row">
         <div class="col-4">
-          <h6 class="card-subtitle mb-2 alert-subtitle">Zona:</h6>
+          <h6 class="card-subtitle pb-2 alert-subtitle">Zona:</h6>
         </div>
         <div class="col-8">
-          <p class="card-subtitle lh-1 mb-2 alert-info">{{ alert.zone }}</p>
+          <p class="card-subtitle lh-1 pb-2 alert-info">{{ alert.zone }}</p>
         </div>
       </div>
       <div class="row">
         <div class="col-4">
-          <h6 class="card-subtitle mb-2 alert-subtitle">Fecha:</h6>
+          <h6 class="card-subtitle pb-2 alert-subtitle">Fecha:</h6>
         </div>
         <div class="col-8">
-          <p class="card-subtitle lh-1 mb-2 alert-info">{{ alert.date }}</p>
+          <p class="card-subtitle lh-1 pb-2 alert-info">{{ alert.date }}</p>
         </div>
       </div>
       <div class="row">
         <div class="col-4">
-          <h6 class="card-subtitle mb-2 alert-subtitle">Hora:</h6>
+          <h6 class="card-subtitle pb-2 alert-subtitle">Hora:</h6>
         </div>
         <div class="col-8">
-          <p class="card-subtitle lh-1 mb-2 alert-info">{{ alert.hour }}</p>
+          <p class="card-subtitle lh-1 pb-2 alert-info">{{ alert.hour }}</p>
         </div>
       </div>
       <div class="row">
         <div class="col-4">
-          <h6 class="card-subtitle mb-2 alert-subtitle">Descripción:</h6>
+          <h6 class="card-subtitle alert-subtitle">Descripción:</h6>
         </div>
         <div class="col-8">
-          <p class="card-subtitle lh-1 mb-2 alert-info">{{ alert.description }}</p>
+          <p class="card-subtitle lh-1 alert-info">{{ alert.description }}</p>
         </div>
       </div>
     </div>
+    <button class="edit-button"> <span class="bi bi-pencil-fill" style="color: white;"></span> </button>
+    <button class="trash-button"> <span class="bi bi-trash-fill" style="color: white;"></span> </button>
   </div>
 </div>
