@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { InitPageComponent } from './init-page/init-page.component';
+import { RegisterAlertComponent } from './register-alert/register-alert.component';
 import { SecurityAlertManagementComponent } from './security-alert-management/security-alert-management.component';
 import { SecurityAlertsComponent } from './security-alerts/security-alerts.component';
 
@@ -12,6 +13,7 @@ const routes: Routes = [
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'security-alerts', component: SecurityAlertsComponent },
+      { path: 'security-alerts/register-alert', component: RegisterAlertComponent },
       { path: 'security-alerts/security-alert-management', component: SecurityAlertManagementComponent },
       { path: '**', component: HomeComponent },
     ],
