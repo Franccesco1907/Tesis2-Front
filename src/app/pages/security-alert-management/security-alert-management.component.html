@@ -1,1 +1,7 @@
-<p>security-alert-management works!</p>
+<div class="card m-4 p-4">
+  <h5 class="fw-bold">Notificaciones de alertas</h5>
+  <ng-container *ngFor="let alert of alertNotifications">
+    <app-alert-notifications class="alert-notifications py-2" [alert]="alert">
+    </app-alert-notifications>
+  </ng-container>
+</div>
