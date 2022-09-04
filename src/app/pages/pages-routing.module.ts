@@ -5,6 +5,7 @@ import { InitPageComponent } from './init-page/init-page.component';
 import { RegisterAlertComponent } from './register-alert/register-alert.component';
 import { SecurityAlertManagementComponent } from './security-alert-management/security-alert-management.component';
 import { SecurityAlertsComponent } from './security-alerts/security-alerts.component';
+import { SecurityRiskTrackingComponent } from './security-risk-tracking/security-risk-tracking.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
       { path: 'security-alerts', component: SecurityAlertsComponent },
       { path: 'security-alerts/register-alert', component: RegisterAlertComponent },
       { path: 'security-alerts/security-alert-management', component: SecurityAlertManagementComponent },
+      { path: 'security-alerts/security-risk-tracking', component: SecurityRiskTrackingComponent },
       { path: '**', component: HomeComponent },
     ],
   },
