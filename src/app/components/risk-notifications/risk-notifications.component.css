@@ -1,0 +1,32 @@
+.risk-subtitle {
+  font-size: 0.775rem;
+}
+
+.risk-info {
+  font-size: 0.775rem;
+}
+
+.edit-button {
+  background-color: #e5b819;
+  border: none;
+  border-radius: 10%;
+  left: 200px;
+  position: relative;
+  top: -273px;
+}
+
+.mitigate-button {
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 10%;
+  left: 210px;
+  outline: none;
+  position: relative;
+  top: -273px;
+}
+
+.card-info {
+  padding: 0rem 1rem;
+  position: relative;
+  top: 1rem;
+}

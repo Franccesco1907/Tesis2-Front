@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SubmenuCardComponent } from './submenu-card/submenu-card.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { AlertNotificationsComponent } from './alert-notifications/alert-notifications.component';
+import { RiskNotificationsComponent } from './risk-notifications/risk-notifications.component';
 
 
 
@@ -10,7 +11,8 @@ import { AlertNotificationsComponent } from './alert-notifications/alert-notific
   declarations: [
     NavbarComponent,
     SubmenuCardComponent,
-    AlertNotificationsComponent
+    AlertNotificationsComponent,
+    RiskNotificationsComponent
   ],
   imports: [
     CommonModule
@@ -18,7 +20,8 @@ import { AlertNotificationsComponent } from './alert-notifications/alert-notific
   exports: [
     NavbarComponent,
     SubmenuCardComponent,
-    AlertNotificationsComponent
+    AlertNotificationsComponent,
+    RiskNotificationsComponent
   ]
 })
 export class ComponentsModule { }
