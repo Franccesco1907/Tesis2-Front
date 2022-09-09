@@ -1,32 +1,65 @@
-<div class="card" style="width: 18rem">
-  <div class="card-body pl-4">
+<div class="card register-container mt-4" style="width: 21rem;">
+  <div class="card-body">
     <h5 class="fw-bold">Registro de alertas</h5>
     <form action="">
       <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Código</label>
-        <input type="email" class="form-control" id="code" placeholder="Código">
+        <label for="code" class="form-label">Código</label>
+        <input
+          type="text"
+          class="form-control"
+          id="code"
+          placeholder="Código"
+          disabled
+        />
       </div>
       <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Incidente</label>
-        <input type="email" class="form-control" id="incident" placeholder="Incidente">
+        <label for="incident" class="form-label">Incidente</label>
+        <input
+          type="text"
+          class="form-control"
+          id="incident"
+          placeholder="Incidente"
+        />
       </div>
       <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Gravedad</label>
-        <input type="email" class="form-control" id="severity" placeholder="Gravedad">
+        <label for="severity" class="form-label">Gravedad</label>
+        <select class="form-select" aria-label="Seleccione">
+          <option selected>Seleccione</option>
+          <option value="1">Leve</option>
+          <option value="2">Grave</option>
+          <option value="3">Muy grave</option>
+        </select>
       </div>
       <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Sector</label>
-        <input type="email" class="form-control" id="sector" placeholder="Sector">
+        <label for="sector" class="form-label">Sector</label>
+        <select class="form-select" aria-label="Seleccione">
+          <option selected>Seleccione</option>
+          <option value="1">Administrativa</option>
+          <option value="2">Producción</option>
+          <option value="3">Soporte</option>
+        </select>
       </div>
       <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Zona</label>
-        <input type="email" class="form-control" id="zone" placeholder="Zona">
+        <label for="zone" class="form-label">Zona</label>
+        <select class="form-select" aria-label="Seleccione">
+          <option selected>Seleccione</option>
+          <option value="1">Despacho</option>
+          <option value="2">Recojo</option>
+        </select>
       </div>
       <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+        <label for="description" class="form-label"
+          >Descripción</label
+        >
         <textarea class="form-control" id="description" rows="3"></textarea>
       </div>
+      <div class="input-group mb-3">
+        <input type="file" id="file">
+      </div>
     </form>
-    <button>Registrar</button>
+
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn register--background">Registrar</button>
+    </div>
   </div>
 </div>

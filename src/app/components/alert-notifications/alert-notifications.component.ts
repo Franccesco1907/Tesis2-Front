@@ -13,4 +13,7 @@ export class AlertNotificationsComponent implements OnInit {
     console.log("imprimiendo alert desde hijo", alert);
   }
 
+  openDialog() {
+    
+  }
 }

@@ -4,6 +4,7 @@ import { SubmenuCardComponent } from './submenu-card/submenu-card.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { AlertNotificationsComponent } from './alert-notifications/alert-notifications.component';
 import { RiskNotificationsComponent } from './risk-notifications/risk-notifications.component';
+import { ModalComponent } from './modal/modal.component';
 
 
 
@@ -12,7 +13,8 @@ import { RiskNotificationsComponent } from './risk-notifications/risk-notificati
     NavbarComponent,
     SubmenuCardComponent,
     AlertNotificationsComponent,
-    RiskNotificationsComponent
+    RiskNotificationsComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule
@@ -21,7 +23,8 @@ import { RiskNotificationsComponent } from './risk-notifications/risk-notificati
     NavbarComponent,
     SubmenuCardComponent,
     AlertNotificationsComponent,
-    RiskNotificationsComponent
+    RiskNotificationsComponent,
+    ModalComponent
   ]
 })
 export class ComponentsModule { }
