@@ -8,6 +8,7 @@ import { InitPageComponent } from './init-page/init-page.component';
 import { SecurityAlertManagementComponent } from './security-alert-management/security-alert-management.component';
 import { RegisterAlertComponent } from './register-alert/register-alert.component';
 import { SecurityRiskTrackingComponent } from './security-risk-tracking/security-risk-tracking.component';
+import { SecurityControlComponent } from './security-control/security-control.component';
 
 
 
@@ -18,7 +19,8 @@ import { SecurityRiskTrackingComponent } from './security-risk-tracking/security
     InitPageComponent,
     SecurityAlertManagementComponent,
     RegisterAlertComponent,
-    SecurityRiskTrackingComponent
+    SecurityRiskTrackingComponent,
+    SecurityControlComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { SecurityRiskTrackingComponent } from './security-risk-tracking/security
     PagesRoutingModule,
     RegisterAlertComponent,
     SecurityAlertsComponent,
-    SecurityRiskTrackingComponent
+    SecurityControlComponent,
+    SecurityRiskTrackingComponent,
   ]
 })
 export class PagesModule { }

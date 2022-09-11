@@ -1,26 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-
-declare var window: any;
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css'],
 })
 export class ModalComponent implements OnInit {
-  modal: any;
+  @Input() title: string = '';
+  @Input() description: string = '';
+  @Input() imageUrl: string = '';
+  @Output() close: EventEmitter<any> = new EventEmitter<any>();
+
   constructor() {}
 
   ngOnInit(): void {
-    this.modal = new window.bootstrap.Modal(
-      document.getElementById('modal')
-    )
-  }
-
-  openModal() {
-    this.modal.show()
   }
 
   closeModal() {
-    this.modal.hide()
+    this.close.emit(false);
   }
 }

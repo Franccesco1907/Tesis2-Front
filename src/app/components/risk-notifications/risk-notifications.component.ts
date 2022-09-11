@@ -7,9 +7,19 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RiskNotificationsComponent implements OnInit {
   @Input() risk : any; // TODO: Cambiar tipos de datos
+  titleModal: string = 'Mitigar el riesgo';
+  descriptionModal: string = '¿Está seguro de mitigar el riesgo?';
+  showModal: boolean = true;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  openModal() {
+    this.showModal = true;
+  }
+  
+  closeModal() {
+    this.showModal = false;
+  }
 }
