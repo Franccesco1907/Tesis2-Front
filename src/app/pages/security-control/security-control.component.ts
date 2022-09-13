@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./security-control.component.css']
 })
 export class SecurityControlComponent implements OnInit {
+  
+  titleModal: string = 'Equipos de seguridad';
+  descriptionModal: string = '¿Está seguro de mitigar la alerta?';
+  showModal: boolean = true;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  openModal() {
+    this.showModal = true;
+  }
+  
+  closeModal() {
+    // this.showModal = false;
+  }
 }

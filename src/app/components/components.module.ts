@@ -5,6 +5,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { AlertNotificationsComponent } from './alert-notifications/alert-notifications.component';
 import { RiskNotificationsComponent } from './risk-notifications/risk-notifications.component';
 import { ModalComponent } from './modal/modal.component';
+import { ModalUbicationComponent } from './modal-ubication/modal-ubication.component';
 
 
 
@@ -14,7 +15,8 @@ import { ModalComponent } from './modal/modal.component';
     SubmenuCardComponent,
     AlertNotificationsComponent,
     RiskNotificationsComponent,
-    ModalComponent
+    ModalComponent,
+    ModalUbicationComponent
   ],
   imports: [
     CommonModule
@@ -24,7 +26,8 @@ import { ModalComponent } from './modal/modal.component';
     SubmenuCardComponent,
     AlertNotificationsComponent,
     RiskNotificationsComponent,
-    ModalComponent
+    ModalComponent,
+    ModalUbicationComponent
   ]
 })
 export class ComponentsModule { }

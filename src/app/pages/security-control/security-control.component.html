@@ -1,15 +1,27 @@
 <app-submenu-card
-  routerLink="security-alert-management"
   [imgDirectory]="'../../../assets/images/Control de seguridad/Equipos de seguridad.jpg'"
   [subtitle]="'Equipos de seguridad'"
+  data-bs-toggle="modal"
+  data-bs-target="#modalUbicationComponent"
+  (click)="openModal()"
 ></app-submenu-card>
 <app-submenu-card
-  routerLink="security-risk-tracking"
   [imgDirectory]="'../../../assets/images/Control de seguridad/Cambio de equipos.jpg'"
   [subtitle]="'Cambio de equipos'"
+  data-bs-toggle="modal"
+  data-bs-target="#modalUbicationComponent"
+  (click)="openModal()"
 ></app-submenu-card>
 <app-submenu-card
-  routerLink="register-alert"
   [imgDirectory]="'../../../assets/images/Control de seguridad/Checklist.png'"
   [subtitle]="'Inspección de EPP\'s'"
+  data-bs-toggle="modal"
+  data-bs-target="#modalUbicationComponent"
+  (click)="openModal()"
 ></app-submenu-card>
+<app-modal-ubication
+  *ngIf="showModal"
+  [title]="titleModal"
+  [description]="descriptionModal"
+  (close)="closeModal()"
+></app-modal-ubication>

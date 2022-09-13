@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, AfterContentInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-alert-notifications',
@@ -19,7 +19,8 @@ export class AlertNotificationsComponent implements OnInit {
   openModal() {
     this.showModal = true;
   }
+  
   closeModal() {
-    this.showModal = false;
+    // this.showModal = false;
   }
 }
