@@ -6,6 +6,7 @@ import { AlertNotificationsComponent } from './alert-notifications/alert-notific
 import { RiskNotificationsComponent } from './risk-notifications/risk-notifications.component';
 import { ModalComponent } from './modal/modal.component';
 import { ModalUbicationComponent } from './modal-ubication/modal-ubication.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -19,7 +20,7 @@ import { ModalUbicationComponent } from './modal-ubication/modal-ubication.compo
     ModalUbicationComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, SharedModule
   ],
   exports: [
     NavbarComponent,

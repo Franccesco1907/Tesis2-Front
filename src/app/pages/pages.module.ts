@@ -9,6 +9,7 @@ import { SecurityAlertManagementComponent } from './security-alert-management/se
 import { RegisterAlertComponent } from './register-alert/register-alert.component';
 import { SecurityRiskTrackingComponent } from './security-risk-tracking/security-risk-tracking.component';
 import { SecurityControlComponent } from './security-control/security-control.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -25,7 +26,8 @@ import { SecurityControlComponent } from './security-control/security-control.co
   imports: [
     CommonModule,
     ComponentsModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    SharedModule
   ],
   exports: [
     HomeComponent,
