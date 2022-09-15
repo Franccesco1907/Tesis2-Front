@@ -1,24 +1,25 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-risk-notifications',
   templateUrl: './risk-notifications.component.html',
-  styleUrls: ['./risk-notifications.component.css']
+  styleUrls: ['./risk-notifications.component.css'],
 })
 export class RiskNotificationsComponent implements OnInit {
-  @Input() risk : any; // TODO: Cambiar tipos de datos
+  @Input() risk: any; // TODO: Cambiar tipos de datos
   titleModal: string = 'Mitigar el riesgo';
   descriptionModal: string = '¿Está seguro de mitigar el riesgo?';
   showModal: boolean = true;
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {}
 
   openModal() {
     this.showModal = true;
   }
-  
+
   closeModal() {
     this.showModal = false;
   }

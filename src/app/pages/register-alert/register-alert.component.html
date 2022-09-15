@@ -13,7 +13,7 @@
       </div>
       <div class="mb-3">
         <label for="severity" class="form-label">Afectado</label>
-        <select class="form-select" aria-label="Seleccione" formControlName="cBoxUser">
+        <select class="form-select" aria-label="Seleccione" formControlName="cBoxUserAffected">
           <option disabled selected value="0" hidden>Seleccione</option>
           <option *ngFor="let user of this.users" [value]="user.id_usuario"> {{user.nombres}} </option>
         </select>

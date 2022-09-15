@@ -10,6 +10,7 @@ import { RegisterAlertComponent } from './register-alert/register-alert.componen
 import { SecurityRiskTrackingComponent } from './security-risk-tracking/security-risk-tracking.component';
 import { SecurityControlComponent } from './security-control/security-control.component';
 import { SharedModule } from '../shared/shared.module';
+import { UpdateTrackingRiskComponent } from './update-tracking-risk/update-tracking-risk.component';
 
 
 
@@ -21,7 +22,8 @@ import { SharedModule } from '../shared/shared.module';
     SecurityAlertManagementComponent,
     RegisterAlertComponent,
     SecurityRiskTrackingComponent,
-    SecurityControlComponent
+    SecurityControlComponent,
+    UpdateTrackingRiskComponent
   ],
   imports: [
     CommonModule,
@@ -36,6 +38,7 @@ import { SharedModule } from '../shared/shared.module';
     SecurityAlertsComponent,
     SecurityControlComponent,
     SecurityRiskTrackingComponent,
+    UpdateTrackingRiskComponent
   ]
 })
 export class PagesModule { }

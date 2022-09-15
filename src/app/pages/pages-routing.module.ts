@@ -7,6 +7,7 @@ import { SecurityAlertManagementComponent } from './security-alert-management/se
 import { SecurityAlertsComponent } from './security-alerts/security-alerts.component';
 import { SecurityControlComponent } from './security-control/security-control.component';
 import { SecurityRiskTrackingComponent } from './security-risk-tracking/security-risk-tracking.component';
+import { UpdateTrackingRiskComponent } from './update-tracking-risk/update-tracking-risk.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path: 'security-alerts/register-alert', component: RegisterAlertComponent },
       { path: 'security-alerts/security-alert-management', component: SecurityAlertManagementComponent },
       { path: 'security-alerts/security-risk-tracking', component: SecurityRiskTrackingComponent },
+      { path: 'security-alerts/security-risk-tracking/:id_alerta_riesgo', component: UpdateTrackingRiskComponent },
       { path: 'security-control', component: SecurityControlComponent },
       { path: 'security-control/register-alert', component: RegisterAlertComponent },
       { path: 'security-control/security-alert-management', component: SecurityAlertManagementComponent },

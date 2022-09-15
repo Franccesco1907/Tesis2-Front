@@ -28,7 +28,7 @@ export class RegisterAlertComponent implements OnInit {
   ) {
     this.formAlert = this.formBuilder.group({
       inputIncident: [null, Validators.required],
-      cBoxUser: [null],
+      cBoxUserAffected: [null],
       cBoxSeverity: [null, Validators.required],
       cBoxSector: [null, Validators.required],
       cBoxZone: [null, Validators.required],
@@ -37,17 +37,25 @@ export class RegisterAlertComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.fillCboxUser();
+    this.fillCboxSector();
+    this.onChangeCboxSector();
+  }
+
+  fillCboxUser() {
     this.userService.getUsers().subscribe((users) => {
       this.users = users;
       console.log('this.users', this.users);
     });
+  }
+
+  fillCboxSector() {
     this.sectorService.getSectors().subscribe((sectors) => {
       this.sectors = sectors;
       console.log('this.sectors', this.sectors);
     });
-
-    this.onChangeCboxSector();
   }
+
   onChangeCboxSector() {
     this.formAlert.controls['cBoxSector'].valueChanges.subscribe(
       (idSectorSelected) => {
@@ -67,7 +75,7 @@ export class RegisterAlertComponent implements OnInit {
     let alert = {
       id_sector: this.formAlert.value.cBoxSector,
       gravedad: this.formAlert.value.cBoxSeverity,
-      id_usuario: this.formAlert.value.cBoxUser || null,
+      id_usuario: this.formAlert.value.cBoxUserAffected || null,
       id_zona: this.formAlert.value.cBoxZone,
       incidente: this.formAlert.value.inputIncident,
       descripcion: this.formAlert.value.textAreaDescription,

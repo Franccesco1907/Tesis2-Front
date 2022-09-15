@@ -7,6 +7,7 @@ import { RiskNotificationsComponent } from './risk-notifications/risk-notificati
 import { ModalComponent } from './modal/modal.component';
 import { ModalUbicationComponent } from './modal-ubication/modal-ubication.component';
 import { SharedModule } from '../shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -20,7 +21,7 @@ import { SharedModule } from '../shared/shared.module';
     ModalUbicationComponent
   ],
   imports: [
-    CommonModule, SharedModule
+    CommonModule, SharedModule, RouterModule 
   ],
   exports: [
     NavbarComponent,
