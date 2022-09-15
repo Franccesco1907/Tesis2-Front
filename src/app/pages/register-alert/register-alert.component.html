@@ -14,14 +14,14 @@
       <div class="mb-3">
         <label for="severity" class="form-label">Afectado</label>
         <select class="form-select" aria-label="Seleccione" formControlName="cBoxUser">
-          <option value="0" selected>Seleccione</option>
+          <option disabled selected value="0" hidden>Seleccione</option>
           <option *ngFor="let user of this.users" [value]="user.id_usuario"> {{user.nombres}} </option>
         </select>
       </div>
       <div class="mb-3">
         <label for="severity" class="form-label">Gravedad</label>
         <select class="form-select" aria-label="Seleccione" formControlName="cBoxSeverity">
-          <option selected>Seleccione</option>
+          <option disabled selected value="0" hidden>Seleccione</option>
           <option value="LEVE">Leve</option>
           <option value="GRAVE">Grave</option>
           <option value="MUY_GRAVE">Muy grave</option>
@@ -30,14 +30,14 @@
       <div class="mb-3">
         <label for="sector" class="form-label">Sector</label>
         <select class="form-select" aria-label="Seleccione" formControlName="cBoxSector">
-          <option value="0" selected>Seleccione</option>
+          <option disabled selected value="0" hidden>Seleccione</option>
           <option *ngFor="let sector of this.sectors" [value]="sector.id_sector"> {{sector.nombre}} </option>
         </select>
       </div>
       <div class="mb-3">
         <label for="zone" class="form-label">Zona</label>
         <select class="form-select" aria-label="Seleccione" formControlName="cBoxZone">
-          <option selected>Seleccione</option>
+          <option disabled selected value="0" hidden>Seleccione</option>
           <option *ngFor="let zone of this.zones" [value]="zone.id_zona"> {{zone.nombre}} </option>
         </select>
       </div>
@@ -51,7 +51,7 @@
     </form>
 
     <div class="d-flex justify-content-center">
-      <button type="submit" class="btn register--background" (click)="registerAlert()">Registrar</button>
+      <button type="submit" class="btn register--background" [disabled]="formAlert.invalid" (click)="registerAlert()">Registrar</button>
     </div>
   </div>
 </div>

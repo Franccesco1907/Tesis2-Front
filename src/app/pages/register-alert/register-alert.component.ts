@@ -4,6 +4,7 @@ import { AlertService } from 'src/app/core/services/alert.service';
 import { SectorService } from 'src/app/core/services/sector.service';
 import { UserService } from 'src/app/core/services/user.service';
 import { ZoneService } from 'src/app/core/services/zone.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register-alert',
@@ -22,11 +23,12 @@ export class RegisterAlertComponent implements OnInit {
     private userService: UserService,
     private sectorService: SectorService,
     private zoneService: ZoneService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private notificationService: ToastrService
   ) {
     this.formAlert = this.formBuilder.group({
       inputIncident: [null, Validators.required],
-      cBoxUser: [null, Validators.required],
+      cBoxUser: [null],
       cBoxSeverity: [null, Validators.required],
       cBoxSector: [null, Validators.required],
       cBoxZone: [null, Validators.required],
@@ -74,6 +76,10 @@ export class RegisterAlertComponent implements OnInit {
 
     this.alertService.createAlert(alert).subscribe(alert => {
       console.log("alert service", alert);
+      (document.getElementById('alertForm') as HTMLFormElement).reset();
+      this.notificationService.success('Confirmación de mensaje', 'REGISTRADO', {positionClass: 'toast-top-center'})
+    }, error => {
+      this.notificationService.error('Hubo un error con el registro de la alerta', 'ERROR', {positionClass: 'toast-top-center'})
     });
   }
 }

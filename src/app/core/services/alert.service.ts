@@ -5,14 +5,18 @@ import { environment } from 'src/environments/environment';
 const url_base = environment.url_base + '/alert';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AlertService {
-
   constructor(private httpClient: HttpClient) {}
-  
-  createAlert(alert : any) {
+
+  createAlert(alert: any) {
     const URL = url_base + '/';
     return this.httpClient.post<any>(URL, alert);
+  }
+
+  getAlerts() {
+    const URL = url_base + '/';
+    return this.httpClient.get<any>(URL);
   }
 }
