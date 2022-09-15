@@ -10,19 +10,19 @@
   background-color: #E5B819;
   border: none;
   border-radius: 10%;
-  left: 200px;
-  position: relative;
-  top: -210px;
+  right: 40px;
+  position: absolute;
+  top: -10px;
 }
 
 .mitigate-button {
   background-color: #E74C3C;
   border: none;
   border-radius: 10%;
-  left: 210px;
+  right: 5px;
   outline: none;
-  position: relative;
-  top: -210px;
+  position: absolute;
+  top: -10px;
 }
 
 .card-info {

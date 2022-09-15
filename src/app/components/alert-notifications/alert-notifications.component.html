@@ -1,12 +1,14 @@
 <div class="card" style="width: 18rem">
-  <div class="card-body card-info">
+  <div class="card-body card-info pb-4">
     <div class="col">
       <div class="row">
         <div class="col-4">
           <h6 class="card-subtitle lh-1 pb-2 alert-subtitle">Código:</h6>
         </div>
         <div class="col-8">
-          <p class="card-subtitle lh-1 pb-2 alert-info">{{ alert.id_alerta_riesgo }}</p>
+          <p class="card-subtitle lh-1 pb-2 alert-info">
+            {{ alert.id_alerta_riesgo }}
+          </p>
         </div>
       </div>
       <div class="row">
@@ -14,7 +16,9 @@
           <h6 class="card-subtitle pb-2 alert-subtitle">Incidente:</h6>
         </div>
         <div class="col-8">
-          <p class="card-subtitle lh-1 pb-2 alert-info">{{ alert.incidente }}</p>
+          <p class="card-subtitle lh-1 pb-2 alert-info">
+            {{ alert.incidente }}
+          </p>
         </div>
       </div>
       <div class="row">
@@ -22,7 +26,9 @@
           <h6 class="card-subtitle pb-2 alert-subtitle">Gravedad:</h6>
         </div>
         <div class="col-8">
-          <p class="card-subtitle lh-1 pb-2 alert-info">{{ alert.gravedad | titlecase }}</p>
+          <p class="card-subtitle lh-1 pb-2 alert-info">
+            {{ alert.gravedad | titlecase }}
+          </p>
         </div>
       </div>
       <div class="row">
@@ -30,7 +36,9 @@
           <h6 class="card-subtitle pb-2 alert-subtitle">Sector:</h6>
         </div>
         <div class="col-8">
-          <p class="card-subtitle lh-1 pb-2 alert-info">{{ alert.nombre_sector }}</p>
+          <p class="card-subtitle lh-1 pb-2 alert-info">
+            {{ alert.nombre_sector }}
+          </p>
         </div>
       </div>
       <div class="row">
@@ -38,7 +46,9 @@
           <h6 class="card-subtitle pb-2 alert-subtitle">Zona:</h6>
         </div>
         <div class="col-8">
-          <p class="card-subtitle lh-1 pb-2 alert-info">{{ alert.nombre_zona }}</p>
+          <p class="card-subtitle lh-1 pb-2 alert-info">
+            {{ alert.nombre_zona }}
+          </p>
         </div>
       </div>
       <div class="row">
@@ -46,7 +56,9 @@
           <h6 class="card-subtitle pb-2 alert-subtitle">Fecha:</h6>
         </div>
         <div class="col-8">
-          <p class="card-subtitle lh-1 pb-2 alert-info">{{ alert.fecha_hora | date }}</p>
+          <p class="card-subtitle lh-1 pb-2 alert-info">
+            {{ alert.fecha_hora | date }}
+          </p>
         </div>
       </div>
       <div class="row">
@@ -54,7 +66,9 @@
           <h6 class="card-subtitle pb-2 alert-subtitle">Hora:</h6>
         </div>
         <div class="col-8">
-          <p class="card-subtitle lh-1 pb-2 alert-info">{{ alert.fecha_hora | date:'shortTime' }}</p>
+          <p class="card-subtitle lh-1 pb-2 alert-info">
+            {{ alert.fecha_hora | date: "shortTime" }}
+          </p>
         </div>
       </div>
       <div class="row">
@@ -65,18 +79,20 @@
           <p class="card-subtitle lh-1 alert-info">{{ alert.descripcion }}</p>
         </div>
       </div>
+      <!-- Botones -->
+      <!-- <button type="button" class="edit-button">
+        <span class="bi bi-pencil-fill" style="color: white"></span>
+      </button>
+      <button
+        class="mitigate-button"
+        data-bs-toggle="modal"
+        data-bs-target="#modalComponent"
+        (click)="openModal()"
+      >
+        <span class="bi bi-volume-mute-fill" style="color: white"></span>
+      </button> -->
     </div>
-    <button class="edit-button">
-      <span class="bi bi-pencil-fill" style="color: white"></span>
-    </button>
-    <button
-      class="mitigate-button"
-      data-bs-toggle="modal"
-      data-bs-target="#modalComponent"
-      (click)="openModal()"
-    >
-      <span class="bi bi-volume-mute-fill" style="color: white"></span>
-    </button>
+
     <app-modal
       *ngIf="showModal"
       [title]="titleModal"
