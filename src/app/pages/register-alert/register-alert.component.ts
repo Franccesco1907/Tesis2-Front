@@ -45,14 +45,12 @@ export class RegisterAlertComponent implements OnInit {
   fillCboxUser() {
     this.userService.getUsers().subscribe((users) => {
       this.users = users;
-      console.log('this.users', this.users);
     });
   }
 
   fillCboxSector() {
     this.sectorService.getSectors().subscribe((sectors) => {
       this.sectors = sectors;
-      console.log('this.sectors', this.sectors);
     });
   }
 
@@ -67,7 +65,6 @@ export class RegisterAlertComponent implements OnInit {
   getZoneByIdSector(id_sector: number) {
     this.zoneService.getZonesByIdSector(id_sector).subscribe((zones) => {
       this.zones = zones;
-      console.log('this.zones', this.zones);
     });
   }
 
@@ -83,11 +80,10 @@ export class RegisterAlertComponent implements OnInit {
     console.log("alert", alert);
 
     this.alertService.createAlert(alert).subscribe(alert => {
-      console.log("alert service", alert);
       (document.getElementById('alertForm') as HTMLFormElement).reset();
-      this.notificationService.success('Confirmación de mensaje', 'REGISTRADO', {positionClass: 'toast-top-center'})
+      this.notificationService.success('¡Se ha registrado exitosamente!', '¡REGISTRADO!', {positionClass: 'toast-top-center'})
     }, error => {
-      this.notificationService.error('Hubo un error con el registro de la alerta', 'ERROR', {positionClass: 'toast-top-center'})
+      this.notificationService.error('¡Hubo un error con el registro de la alerta!', '¡ERROR!', {positionClass: 'toast-top-center'})
     });
   }
 }

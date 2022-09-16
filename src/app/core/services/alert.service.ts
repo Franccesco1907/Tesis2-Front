@@ -19,4 +19,9 @@ export class AlertService {
     const URL = url_base + '/';
     return this.httpClient.get<any>(URL);
   }
+
+  mitigateAlert(id_alerta_riesgo : number | string) {
+    const URL = url_base + '/' + 'mitigateAlert=' + id_alerta_riesgo;
+    return this.httpClient.get<any>(URL);
+  }
 }

@@ -19,8 +19,9 @@ export class AlertNotificationsComponent implements OnInit {
   openModal() {
     this.showModal = true;
   }
-  
-  closeModal() {
+
+  mitigateAlert(event: any) {
     // this.showModal = false;
+    console.log('ramoncitoooo', event);
   }
 }

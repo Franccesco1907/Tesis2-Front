@@ -8,14 +8,14 @@ export class ModalComponent implements OnInit {
   @Input() title: string = '';
   @Input() description: string = '';
   @Input() imageUrl: string = '';
-  @Output() close: EventEmitter<any> = new EventEmitter<any>();
+  @Output() accept: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {}
 
   ngOnInit(): void {
   }
 
-  closeModal() { // El propio boostrap cierra el modal con la clase
-    this.close.emit(false);
+  acceptModal() { // El propio boostrap cierra el modal con la clase
+    this.accept.emit(true);
   }
 }

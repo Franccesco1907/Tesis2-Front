@@ -91,16 +91,14 @@
         class="mitigate-button"
         data-bs-toggle="modal"
         data-bs-target="#modalComponent"
-        (click)="openModal()"
       >
         <span class="bi bi-volume-mute-fill" style="color: white"></span>
       </button>
     </div>
     <app-modal
-      *ngIf="showModal"
       [title]="titleModal"
       [description]="descriptionModal"
-      (close)="closeModal()"
+      (accept)="mitigateRisk($event)"
     ></app-modal>
   </div>
 </div>

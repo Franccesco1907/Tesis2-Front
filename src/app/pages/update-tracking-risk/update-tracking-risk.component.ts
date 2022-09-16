@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { AlertService } from 'src/app/core/services/alert.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SectorService } from 'src/app/core/services/sector.service';
 import { UserService } from 'src/app/core/services/user.service';
 import { ZoneService } from 'src/app/core/services/zone.service';
@@ -27,8 +26,8 @@ export class UpdateTrackingRiskComponent implements OnInit {
     private userService: UserService,
     private sectorService: SectorService,
     private zoneService: ZoneService,
-    private alertService: AlertService,
     private riskService: RiskService,
+    private router: Router,
     private notificationService: ToastrService
   ) {
     this.formTracking = this.formBuilder.group({
@@ -37,7 +36,7 @@ export class UpdateTrackingRiskComponent implements OnInit {
       inputCause: [null, Validators.required],
       inputImprovementPlan: [null, Validators.required],
       cBoxUserAffected: [null],
-      cBoxUserResponsable: [null],
+      cBoxUserResponsable: [null, Validators.required],
       cBoxSeverity: [null, Validators.required],
       cBoxSector: [null, Validators.required],
       cBoxZone: [null, Validators.required],
@@ -67,7 +66,7 @@ export class UpdateTrackingRiskComponent implements OnInit {
         cBoxSeverity: risk.gravedad,
         cBoxSector: risk.id_sector,
         cBoxZone: risk.id_zona,
-        textAreaDescription: risk.descripcion
+        textAreaDescription: risk.descripcion,
       });
       this.formTracking.controls['inputCode'].disable({ onlySelf: true });
     });
@@ -76,14 +75,12 @@ export class UpdateTrackingRiskComponent implements OnInit {
   fillCboxUser() {
     this.userService.getUsers().subscribe((users) => {
       this.users = users;
-      console.log('this.users', this.users);
     });
   }
 
   fillCboxSector() {
     this.sectorService.getSectors().subscribe((sectors) => {
       this.sectors = sectors;
-      console.log('this.sectors', this.sectors);
     });
   }
 
@@ -98,17 +95,17 @@ export class UpdateTrackingRiskComponent implements OnInit {
   getZoneByIdSector(id_sector: number) {
     this.zoneService.getZonesByIdSector(id_sector).subscribe((zones) => {
       this.zones = zones;
-      console.log('this.zones', this.zones);
     });
   }
 
   updateRisk() {
     let riskTracking = {
-      id_alerta_riesgo: this.formTracking.value.inputCode,
+      id_alerta_riesgo: this.risk.id_alerta_riesgo,
       id_sector: this.formTracking.value.cBoxSector,
       gravedad: this.formTracking.value.cBoxSeverity,
       id_usuario_afectado: this.formTracking.value.cBoxUserAffected || null,
-      id_usuario_responsable: this.formTracking.value.cBoxUserResponsable || null,
+      id_usuario_responsable:
+        this.formTracking.value.cBoxUserResponsable || null,
       id_zona: this.formTracking.value.cBoxZone,
       incidente: this.formTracking.value.inputIncident,
       causa: this.formTracking.value.inputCause,
@@ -119,18 +116,17 @@ export class UpdateTrackingRiskComponent implements OnInit {
 
     this.riskService.updateRisk(riskTracking).subscribe(
       (risk) => {
-        console.log('risk service', risk);
-        // ! TODO Enviar a página anterior
+        this.router.navigateByUrl('/security-alerts/security-risk-tracking');
         this.notificationService.success(
-          'Confirmación de mensaje',
-          'ACTUALIZADO',
+          '¡Se actualizó el seguimiento del riesgo satisfactoriamente!',
+          '¡ACTUALIZADO!',
           { positionClass: 'toast-top-center' }
         );
       },
       (error) => {
         this.notificationService.error(
-          'Hubo un error con la actualización del seguimiento del riesgo',
-          'ERROR',
+          '¡Hubo un error con la actualización del seguimiento del riesgo!',
+          '¡ERROR!',
           { positionClass: 'toast-top-center' }
         );
       }

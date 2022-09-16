@@ -8,6 +8,7 @@ import { RiskService } from 'src/app/core/services/risk.service';
 })
 export class SecurityRiskTrackingComponent implements OnInit {
   riskNotifications: any;
+
   constructor(private riskService: RiskService) {}
 
   ngOnInit(): void {
@@ -18,5 +19,11 @@ export class SecurityRiskTrackingComponent implements OnInit {
     this.riskService.getRisks().subscribe((risks) => {
       this.riskNotifications = risks;
     });
+  }
+
+  updateRisks(event : any) {
+    if(event == true) {
+      this.getRisks();
+    }
   }
 }

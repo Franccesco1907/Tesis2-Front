@@ -20,14 +20,12 @@
       </div>
       <div class="modal-body">{{ description }}</div>
       <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          data-bs-dismiss="modal"
-        >
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="acceptModal()">
+          Aceptar
+        </button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Cancelar
         </button>
-        <button type="button" class="btn btn-primary">Aceptar</button>
       </div>
     </div>
   </div>
