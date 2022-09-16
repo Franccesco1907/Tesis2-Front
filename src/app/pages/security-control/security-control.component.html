@@ -1,27 +1,25 @@
 <app-submenu-card
   [imgDirectory]="'../../../assets/images/Control de seguridad/Equipos de seguridad.jpg'"
-  [subtitle]="'Equipos de seguridad'"
+  [subtitle]="titleSecurityEquipments"
   data-bs-toggle="modal"
   data-bs-target="#modalUbicationComponent"
-  (click)="openModal()"
+  (click)="openModal(titleSecurityEquipments)"
 ></app-submenu-card>
 <app-submenu-card
   [imgDirectory]="'../../../assets/images/Control de seguridad/Cambio de equipos.jpg'"
-  [subtitle]="'Cambio de equipos'"
+  [subtitle]="titleChangeEquipment"
   data-bs-toggle="modal"
   data-bs-target="#modalUbicationComponent"
-  (click)="openModal()"
+  (click)="openModal(titleChangeEquipment)"
 ></app-submenu-card>
 <app-submenu-card
   [imgDirectory]="'../../../assets/images/Control de seguridad/Checklist.png'"
-  [subtitle]="'Inspección de EPP\'s'"
+  [subtitle]="titleInspection"
   data-bs-toggle="modal"
   data-bs-target="#modalUbicationComponent"
-  (click)="openModal()"
+  (click)="openModal(titleInspection)"
 ></app-submenu-card>
 <app-modal-ubication
-  *ngIf="showModal"
   [title]="titleModal"
-  [description]="descriptionModal"
-  (close)="closeModal()"
+  (accept)="accept($event)"
 ></app-modal-ubication>

@@ -1,0 +1,27 @@
+<div class="card m-4 p-4">
+  <h5 class="fw-bold">{{ this.navigationExtras.title }}</h5>
+  <table class="table">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">Código</th>
+        <th scope="col">Estado físico</th>
+        <th scope="col">Estado control</th>
+        <th scope="col">Ver</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let equipment of this.securityEquipments">
+        <tr>
+          <th scope="row">{{ equipment.id_equipo_seguridad }}</th>
+          <td>{{ equipment.estado_fisico }}</td>
+          <td>{{ equipment.estado_control }}</td>
+          <td>
+            <button class="eye-button">
+              <span class="bi bi-eye" style="color: white"></span>
+            </button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

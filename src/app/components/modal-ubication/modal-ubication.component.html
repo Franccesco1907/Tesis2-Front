@@ -10,7 +10,9 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalUbicationComponentLabel">{{ title }}</h5>
+        <h5 class="modal-title" id="modalUbicationComponentLabel">
+          {{ title }}
+        </h5>
         <button
           type="button"
           class="btn-close"
@@ -19,33 +21,30 @@
         ></button>
       </div>
       <div class="modal-body">
-        <div class="mb-3">
-          <label for="sector" class="form-label">Sector</label>
-          <select class="form-select" aria-label="Seleccione">
-            <option selected>Seleccione</option>
-            <option value="1">Administrativa</option>
-            <option value="2">Producción</option>
-            <option value="3">Soporte</option>
-          </select>
-        </div>
-        <div class="mb-3">
-          <label for="zone" class="form-label">Zona</label>
-          <select class="form-select" aria-label="Seleccione">
-            <option selected>Seleccione</option>
-            <option value="1">Despacho</option>
-            <option value="2">Recojo</option>
-          </select>
-        </div>
+        <form action="" id="ubicationForm" [formGroup]="formUbication">
+          <div class="mb-3">
+            <label for="sector" class="form-label">Sector</label>
+            <select class="form-select" aria-label="Seleccione" formControlName="cBoxSector">
+              <option disabled selected value="0" hidden>Seleccione</option>
+              <option *ngFor="let sector of this.sectors" [value]="sector.id_sector"> {{sector.nombre}} </option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="zone" class="form-label">Zona</label>
+            <select class="form-select" aria-label="Seleccione" formControlName="cBoxZone">
+              <option disabled selected value="0" hidden>Seleccione</option>
+              <option *ngFor="let zone of this.zones" [value]="zone.id_zona"> {{zone.nombre}} </option>
+            </select>
+          </div>
+        </form>
       </div>
       <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          data-bs-dismiss="modal"
-        >
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="acceptModal()" [disabled]="formUbication.invalid">
+          Aceptar
+        </button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Cancelar
         </button>
-        <button type="button" class="btn btn-primary">Aceptar</button>
       </div>
     </div>
   </div>

@@ -11,18 +11,22 @@ import { SecurityRiskTrackingComponent } from './security-risk-tracking/security
 import { SecurityControlComponent } from './security-control/security-control.component';
 import { SharedModule } from '../shared/shared.module';
 import { UpdateTrackingRiskComponent } from './update-tracking-risk/update-tracking-risk.component';
-
+import { SecurityEquipmentsComponent } from './security-equipments/security-equipments.component';
+import { InspectionComponent } from './inspection/inspection.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    SecurityAlertsComponent,
     InitPageComponent,
-    SecurityAlertManagementComponent,
+    InspectionComponent,
     RegisterAlertComponent,
-    SecurityRiskTrackingComponent,
+    SecurityAlertsComponent,
+    SecurityAlertManagementComponent,
     SecurityControlComponent,
+    SecurityEquipmentsComponent,
+    SecurityRiskTrackingComponent,
     UpdateTrackingRiskComponent
   ],
   imports: [
@@ -33,10 +37,12 @@ import { UpdateTrackingRiskComponent } from './update-tracking-risk/update-track
   ],
   exports: [
     HomeComponent,
+    InspectionComponent,
     PagesRoutingModule,
     RegisterAlertComponent,
     SecurityAlertsComponent,
     SecurityControlComponent,
+    SecurityEquipmentsComponent,
     SecurityRiskTrackingComponent,
     UpdateTrackingRiskComponent
   ]

@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { InitPageComponent } from './init-page/init-page.component';
+import { InspectionComponent } from './inspection/inspection.component';
 import { RegisterAlertComponent } from './register-alert/register-alert.component';
 import { SecurityAlertManagementComponent } from './security-alert-management/security-alert-management.component';
 import { SecurityAlertsComponent } from './security-alerts/security-alerts.component';
 import { SecurityControlComponent } from './security-control/security-control.component';
+import { SecurityEquipmentsComponent } from './security-equipments/security-equipments.component';
 import { SecurityRiskTrackingComponent } from './security-risk-tracking/security-risk-tracking.component';
 import { UpdateTrackingRiskComponent } from './update-tracking-risk/update-tracking-risk.component';
 
@@ -21,9 +23,9 @@ const routes: Routes = [
       { path: 'security-alerts/security-risk-tracking', component: SecurityRiskTrackingComponent },
       { path: 'security-alerts/security-risk-tracking/:id_alerta_riesgo', component: UpdateTrackingRiskComponent },
       { path: 'security-control', component: SecurityControlComponent },
-      { path: 'security-control/register-alert', component: RegisterAlertComponent },
-      { path: 'security-control/security-alert-management', component: SecurityAlertManagementComponent },
-      { path: 'security-control/security-risk-tracking', component: SecurityRiskTrackingComponent },
+      { path: 'security-control/security-equipments', component: SecurityEquipmentsComponent },
+      { path: 'security-control/security-alert-management', component: SecurityAlertManagementComponent }, // Colocar el cambio de equipos
+      { path: 'security-control/inspection', component: InspectionComponent },
 
       { path: '**', component: HomeComponent },
     ],
