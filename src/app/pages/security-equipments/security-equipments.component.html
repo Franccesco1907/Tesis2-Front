@@ -16,7 +16,13 @@
           <td>{{ equipment.estado_fisico }}</td>
           <td>{{ equipment.estado_control }}</td>
           <td>
-            <button class="eye-button">
+            <button
+              class="eye-button"
+              [routerLink]="[
+                'equipment-information',
+                equipment.id_equipo_seguridad
+              ]"
+            >
               <span class="bi bi-eye" style="color: white"></span>
             </button>
           </td>

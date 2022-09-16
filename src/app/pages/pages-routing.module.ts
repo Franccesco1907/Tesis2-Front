@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EquipmentInformationComponent } from './equipment-information/equipment-information.component';
 import { HomeComponent } from './home/home.component';
 import { InitPageComponent } from './init-page/init-page.component';
 import { InspectionComponent } from './inspection/inspection.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
       { path: 'security-alerts/security-risk-tracking/:id_alerta_riesgo', component: UpdateTrackingRiskComponent },
       { path: 'security-control', component: SecurityControlComponent },
       { path: 'security-control/security-equipments', component: SecurityEquipmentsComponent },
+      { path: 'security-control/security-equipments/equipment-information/:id_equipo_seguridad', component: EquipmentInformationComponent },
       { path: 'security-control/security-alert-management', component: SecurityAlertManagementComponent }, // Colocar el cambio de equipos
       { path: 'security-control/inspection', component: InspectionComponent },
 

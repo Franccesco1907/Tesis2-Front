@@ -1,0 +1,55 @@
+<div class="card equipment-container mt-4" style="width: 21rem;">
+  <div class="card-body">
+    <h5 class="fw-bold">Información del equipo</h5>
+    <form action="" id="alertForm" [formGroup]="formAlert">
+      <div class="mb-3">
+        <label for="code" class="form-label">Código</label>
+        <input type="text" class="form-control" id="code" placeholder="Código" disabled />
+      </div>
+      
+      <div class="mb-3">
+        <label for="sector" class="form-label">Sector</label>
+        <select class="form-select" aria-label="Seleccione" formControlName="cBoxSector">
+          <option disabled selected value="0" hidden>Seleccione</option>
+          <option *ngFor="let sector of this.sectors" [value]="sector.id_sector"> {{sector.nombre}} </option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="zone" class="form-label">Zona</label>
+        <select class="form-select" aria-label="Seleccione" formControlName="cBoxZone">
+          <option disabled selected value="0" hidden>Seleccione</option>
+          <option *ngFor="let zone of this.zones" [value]="zone.id_zona"> {{zone.nombre}} </option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="equipment" class="form-label">Equipo</label>
+        <input type="text" class="form-control" id="equipment" placeholder="Equipo" formControlName="inputEquipment"
+          required />
+      </div>
+      <div class="mb-3">
+        <label for="serieNumber" class="form-label">Número de serie</label>
+        <input type="text" class="form-control" id="serieNumber" placeholder="Número de serie" formControlName="inputSerieNumber"
+          required />
+      </div>
+      <div class="mb-3">
+        <label for="mark" class="form-label">Marca</label>
+        <input type="text" class="form-control" id="mark" placeholder="Marca" formControlName="inputMark"
+          required />
+      </div>
+      <div class="mb-3">
+        <label for="adquisitionDate" class="form-label">Fecha de adquisición</label>
+        <input type="text" class="form-control" id="adquisitionDate" placeholder="Fecha de adquisición" formControlName="inputAdquisitionDate"
+          required />
+      </div>
+      <div class="mb-3">
+        <label for="expirationDate" class="form-label">Fecha de vencimiento</label>
+        <input type="text" class="form-control" id="expirationDate" placeholder="Fecha de vencimiento" formControlName="inputExpirationDate"
+          required />
+      </div>
+    </form>
+
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn equipment--background" [disabled]="formAlert.invalid">Cerrar</button>
+    </div>
+  </div>
+</div>

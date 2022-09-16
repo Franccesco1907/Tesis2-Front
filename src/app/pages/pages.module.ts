@@ -14,11 +14,13 @@ import { UpdateTrackingRiskComponent } from './update-tracking-risk/update-track
 import { SecurityEquipmentsComponent } from './security-equipments/security-equipments.component';
 import { InspectionComponent } from './inspection/inspection.component';
 import { RouterModule } from '@angular/router';
+import { EquipmentInformationComponent } from './equipment-information/equipment-information.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
+    EquipmentInformationComponent,
     InitPageComponent,
     InspectionComponent,
     RegisterAlertComponent,
@@ -37,6 +39,7 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     HomeComponent,
+    EquipmentInformationComponent,
     InspectionComponent,
     PagesRoutingModule,
     RegisterAlertComponent,
