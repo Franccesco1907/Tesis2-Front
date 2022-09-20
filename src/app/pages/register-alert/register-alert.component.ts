@@ -5,6 +5,7 @@ import { SectorService } from 'src/app/core/services/sector.service';
 import { UserService } from 'src/app/core/services/user.service';
 import { ZoneService } from 'src/app/core/services/zone.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-alert',
@@ -24,7 +25,8 @@ export class RegisterAlertComponent implements OnInit {
     private sectorService: SectorService,
     private zoneService: ZoneService,
     private alertService: AlertService,
-    private notificationService: ToastrService
+    private notificationService: ToastrService,
+    private router: Router
   ) {
     this.formAlert = this.formBuilder.group({
       inputIncident: [null, Validators.required],
@@ -76,14 +78,26 @@ export class RegisterAlertComponent implements OnInit {
       id_zona: this.formAlert.value.cBoxZone,
       incidente: this.formAlert.value.inputIncident,
       descripcion: this.formAlert.value.textAreaDescription,
-    }
-    console.log("alert", alert);
+    };
+    console.log('alert', alert);
 
-    this.alertService.createAlert(alert).subscribe(alert => {
-      (document.getElementById('alertForm') as HTMLFormElement).reset();
-      this.notificationService.success('¡Se ha registrado exitosamente!', '¡REGISTRADO!', {positionClass: 'toast-top-center'})
-    }, error => {
-      this.notificationService.error('¡Hubo un error con el registro de la alerta!', '¡ERROR!', {positionClass: 'toast-top-center'})
-    });
+    this.alertService.createAlert(alert).subscribe(
+      (alert) => {
+        (document.getElementById('alertForm') as HTMLFormElement).reset();
+        this.notificationService.success(
+          '¡Se ha registrado exitosamente!',
+          '¡REGISTRADO!',
+          { positionClass: 'toast-top-center' }
+        );
+        this.router.navigate(['security-alerts', 'security-alert-management']);
+      },
+      (error) => {
+        this.notificationService.error(
+          '¡Hubo un error con el registro de la alerta!',
+          '¡ERROR!',
+          { positionClass: 'toast-top-center' }
+        );
+      }
+    );
   }
 }

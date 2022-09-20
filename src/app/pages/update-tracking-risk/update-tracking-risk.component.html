@@ -123,15 +123,15 @@
           formControlName="textAreaDescription"
         ></textarea>
       </div>
-      <div class="input-group mb-3">
+      <!-- <div class="input-group mb-3">
         <input type="file" id="file" />
-      </div>
+      </div> -->
     </form>
 
     <div class="d-flex justify-content-center">
       <button
         type="submit"
-        class="btn tracking--background"
+        class="btn btn-primary tracking--background"
         [disabled]="formTracking.invalid"
         (click)="updateRisk()"
       >

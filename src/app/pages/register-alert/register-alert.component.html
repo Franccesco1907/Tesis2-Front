@@ -45,13 +45,13 @@
         <label for="description" class="form-label">Descripción</label>
         <textarea class="form-control" id="description" rows="3" formControlName="textAreaDescription"></textarea>
       </div>
-      <div class="input-group mb-3">
+      <!-- <div class="input-group mb-3">
         <input type="file" id="file">
-      </div>
+      </div> -->
     </form>
 
     <div class="d-flex justify-content-center">
-      <button type="submit" class="btn register--background" [disabled]="formAlert.invalid" (click)="registerAlert()">Registrar</button>
+      <button type="submit" class="btn btn-primary register--background" [disabled]="formAlert.invalid" (click)="registerAlert()">Registrar</button>
     </div>
   </div>
 </div>

@@ -14,4 +14,8 @@ export class SecurityEquipmentService {
     const URL = url_base + '/' + 'id_sector=' + idSector + '&id_zona=' + idZone;
     return this.httpClient.get<any>(URL);
   }
+  getSecurityEquipment(idSecurityEquipment: any) {
+    const URL = url_base + '/' + 'id_equipo_seguridad=' + idSecurityEquipment;
+    return this.httpClient.get<any>(URL);
+  }
 }

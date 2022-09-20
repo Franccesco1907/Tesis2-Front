@@ -1,46 +1,75 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AlertService } from 'src/app/core/services/alert.service';
 import { SectorService } from 'src/app/core/services/sector.service';
-import { UserService } from 'src/app/core/services/user.service';
 import { ZoneService } from 'src/app/core/services/zone.service';
-import { ToastrService } from 'ngx-toastr';
+import { SecurityEquipmentService } from 'src/app/core/services/securityEquipment.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-equipment-information',
   templateUrl: './equipment-information.component.html',
-  styleUrls: ['./equipment-information.component.css']
+  styleUrls: ['./equipment-information.component.css'],
 })
 export class EquipmentInformationComponent implements OnInit {
-  formAlert: FormGroup;
+  formSecurityEquipment: FormGroup;
   users: any;
   sectors: any;
   zones: any;
   alerts: any;
+  securityEquipment: any;
+  id_equipo_seguridad: any;
 
-  constructor(private formBuilder: FormBuilder,
-    private userService: UserService,
+  constructor(
+    private formBuilder: FormBuilder,
     private sectorService: SectorService,
     private zoneService: ZoneService,
-    private alertService: AlertService,
-    private notificationService: ToastrService) {
-      this.formAlert = this.formBuilder.group({
-        cBoxSector: [null, Validators.required],
-        cBoxZone: [null, Validators.required],
-        inputEquipment: [null, Validators.required],
-        inputSerieNumber: [null, Validators.required],
-        inputMark: [null, Validators.required],
-        inputAdquisitionDate: [null, Validators.required],
-        inputExpirationDate: [null, Validators.required]
-      });
-     }
+    private securityEquipmentService: SecurityEquipmentService,
+    private activatedRoute: ActivatedRoute,
+    private route: Router
+  ) {
+    this.formSecurityEquipment = this.formBuilder.group({
+      cBoxCode: [null, Validators.required],
+      cBoxSector: [null, Validators.required],
+      cBoxZone: [null, Validators.required],
+      inputPosition: [null, Validators.required],
+      inputEquipment: [null, Validators.required],
+      inputSerieNumber: [null, Validators.required],
+      inputMark: [null, Validators.required],
+      inputControlState: [null, Validators.required],
+      inputPhysicalState: [null, Validators.required],
+      inputAdquisitionDate: [null, Validators.required],
+      inputExpirationDate: [null, Validators.required],
+    });
+
+    this.id_equipo_seguridad = this.activatedRoute.snapshot.paramMap.get(
+      'id_equipo_seguridad'
+    );
+  }
 
   ngOnInit() {
-  }
-  fillCboxUser() {
-    this.userService.getUsers().subscribe((users) => {
-      this.users = users;
-    });
+    this.fillCboxSector();
+    this.onChangeCboxSector();
+
+    this.securityEquipmentService
+      .getSecurityEquipment(this.id_equipo_seguridad)
+      .subscribe((data) => {
+        this.securityEquipment = data;
+        console.log('this.securityu', this.securityEquipment);
+        this.formSecurityEquipment.patchValue({
+          cBoxCode: data.id_equipo_seguridad,
+          cBoxSector: data.id_sector,
+          cBoxZone: data.id_zona,
+          inputPosition: data.posicion,
+          inputEquipment: data.nombre,
+          inputSerieNumber: data.numero_serie,
+          inputMark: data.marca,
+          inputControlState: data.estado_control,
+          inputPhysicalState: data.estado_fisico,
+          inputAdquisitionDate: data.fecha_adquisicion,
+          inputExpirationDate: data.fecha_vencimiento,
+        });
+        this.formSecurityEquipment.disable({ onlySelf: true });
+      });
   }
 
   fillCboxSector() {
@@ -50,9 +79,9 @@ export class EquipmentInformationComponent implements OnInit {
   }
 
   onChangeCboxSector() {
-    this.formAlert.controls['cBoxSector'].valueChanges.subscribe(
+    this.formSecurityEquipment.controls['cBoxSector'].valueChanges.subscribe(
       (idSectorSelected) => {
-        let id_sector = this.formAlert.controls['cBoxSector'].value;
+        let id_sector = this.formSecurityEquipment.controls['cBoxSector'].value;
         this.getZoneByIdSector(id_sector);
       }
     );
@@ -63,4 +92,13 @@ export class EquipmentInformationComponent implements OnInit {
     });
   }
 
+  close() {
+    this.route.navigate(
+      ['security-control', 'security-equipments'],
+      <any>{
+        id_zone: this.formSecurityEquipment.controls['cBoxZone'].value,
+        id_sector: this.formSecurityEquipment.controls['cBoxSector'].value,
+      }
+    );
+  }
 }
