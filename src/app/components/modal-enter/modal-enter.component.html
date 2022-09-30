@@ -7,14 +7,14 @@
           {{ title }}
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-          (click)="isManualEnter = false"></button>
+          (click)="isManualEnter = false; isScannerEnter = false;"></button>
       </div>
-      <div *ngIf="!isManualEnter" class="modal-body d-flex flex-column">
+      <div *ngIf="!isManualEnter && !isScannerEnter" class="modal-body d-flex flex-column">
         <button type="button" class="btn btn-primary button--modal btn-block m-3 enterTypeButton"
           (click)="isManualEnter = !isManualEnter">
           Ingreso Manual <span class="bi bi-hand-index align-middle" style="color: white"></span>
         </button>
-        <button type="button" class="btn btn-secondary btn-block m-3 enterTypeButton" data-bs-dismiss="modal">
+        <button type="button" class="btn btn-secondary btn-block m-3 enterTypeButton" (click)="isScannerEnter = !isScannerEnter">
           Escanear QR <span class="bi bi-qr-code-scan align-middle" style="color: white"></span>
         </button>
       </div>
@@ -29,6 +29,9 @@
             (click)="accept()">Aceptar</button>
         </div>
       </form>
+      <div *ngIf="isScannerEnter">
+        <zxing-scanner></zxing-scanner>
+      </div>
     </div>
   </div>
 </div>

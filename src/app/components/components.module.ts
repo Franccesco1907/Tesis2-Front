@@ -9,8 +9,7 @@ import { ModalUbicationComponent } from './modal-ubication/modal-ubication.compo
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { ModalEnterComponent } from './modal-enter/modal-enter.component';
-
-
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,7 @@ import { ModalEnterComponent } from './modal-enter/modal-enter.component';
     ModalUbicationComponent
   ],
   imports: [
-    CommonModule, SharedModule, RouterModule 
+    CommonModule, SharedModule, RouterModule, ZXingScannerModule
   ],
   exports: [
     NavbarComponent,
