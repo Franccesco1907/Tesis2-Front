@@ -9,7 +9,7 @@
   [imgDirectory]="'../../../assets/images/Control de seguridad/Cambio de equipos.jpg'"
   [subtitle]="titleChangeEquipment"
   data-bs-toggle="modal"
-  data-bs-target="#modalUbicationComponent"
+  data-bs-target="#modalEnterComponent"
   (click)="openModal(titleChangeEquipment)"
 ></app-submenu-card>
 <app-submenu-card
@@ -23,3 +23,8 @@
   [title]="titleModal"
   (accept)="accept($event)"
 ></app-modal-ubication>
+
+<app-modal-enter
+  [title]="titleModal"
+>
+</app-modal-enter>

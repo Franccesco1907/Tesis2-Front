@@ -8,6 +8,7 @@ import { ModalComponent } from './modal/modal.component';
 import { ModalUbicationComponent } from './modal-ubication/modal-ubication.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { ModalEnterComponent } from './modal-enter/modal-enter.component';
 
 
 
@@ -18,6 +19,7 @@ import { RouterModule } from '@angular/router';
     AlertNotificationsComponent,
     RiskNotificationsComponent,
     ModalComponent,
+    ModalEnterComponent,
     ModalUbicationComponent
   ],
   imports: [
@@ -29,6 +31,7 @@ import { RouterModule } from '@angular/router';
     AlertNotificationsComponent,
     RiskNotificationsComponent,
     ModalComponent,
+    ModalEnterComponent,
     ModalUbicationComponent
   ]
 })

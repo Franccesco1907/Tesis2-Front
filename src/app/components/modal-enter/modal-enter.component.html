@@ -1,0 +1,34 @@
+<div class="modal fade" id="modalEnterComponent" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="modalEnterComponentLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalEnterComponentLabel">
+          {{ title }}
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+          (click)="isManualEnter = false"></button>
+      </div>
+      <div *ngIf="!isManualEnter" class="modal-body d-flex flex-column">
+        <button type="button" class="btn btn-primary button--modal btn-block m-3 enterTypeButton"
+          (click)="isManualEnter = !isManualEnter">
+          Ingreso Manual <span class="bi bi-hand-index align-middle" style="color: white"></span>
+        </button>
+        <button type="button" class="btn btn-secondary btn-block m-3 enterTypeButton" data-bs-dismiss="modal">
+          Escanear QR <span class="bi bi-qr-code-scan align-middle" style="color: white"></span>
+        </button>
+      </div>
+      <form *ngIf="isManualEnter" id="equipmentForm" [formGroup]="formEquipment" class="m-4">
+        <div class="mb-3">
+          <label for="incident" class="form-label">Código de equipo</label>
+          <input type="number" class="form-control" id="codeEquipment" placeholder="Código de equipo"
+            formControlName="inputEquipmentCode" required />
+        </div>
+        <div class="d-flex justify-content-center mb-3">
+          <button type="submit" class="btn btn-primary acceptBackground" [disabled]="formEquipment.invalid"
+            (click)="accept()">Aceptar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

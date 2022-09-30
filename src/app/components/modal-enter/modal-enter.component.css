@@ -1,0 +1,15 @@
+.enterTypeButton {
+    height: 3.5rem;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+}
+
+span {
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+}
+
+.acceptBackground {
+    background-color: #0E4DA4;
+    color: white;
+  }
