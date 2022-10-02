@@ -86,7 +86,7 @@ export class UpdateTrackingRiskComponent implements OnInit {
 
   onChangeCboxSector() {
     this.formTracking.controls['cBoxSector'].valueChanges.subscribe(
-      (idSectorSelected) => {
+      () => {
         let id_sector = this.formTracking.controls['cBoxSector'].value;
         this.getZoneByIdSector(id_sector);
       }

@@ -13,13 +13,14 @@ import { SharedModule } from '../shared/shared.module';
 import { UpdateTrackingRiskComponent } from './update-tracking-risk/update-tracking-risk.component';
 import { SecurityEquipmentsComponent } from './security-equipments/security-equipments.component';
 import { InspectionComponent } from './inspection/inspection.component';
-import { RouterModule } from '@angular/router';
 import { EquipmentInformationComponent } from './equipment-information/equipment-information.component';
+import { ComponentsComponent } from './components/components.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
+    ComponentsComponent,
     EquipmentInformationComponent,
     InitPageComponent,
     InspectionComponent,
@@ -39,6 +40,7 @@ import { EquipmentInformationComponent } from './equipment-information/equipment
   ],
   exports: [
     HomeComponent,
+    ComponentsComponent,
     EquipmentInformationComponent,
     InspectionComponent,
     PagesRoutingModule,

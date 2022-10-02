@@ -11,7 +11,7 @@ import { SecurityControlComponent } from './security-control/security-control.co
 import { SecurityEquipmentsComponent } from './security-equipments/security-equipments.component';
 import { SecurityRiskTrackingComponent } from './security-risk-tracking/security-risk-tracking.component';
 import { UpdateTrackingRiskComponent } from './update-tracking-risk/update-tracking-risk.component';
-
+import { ComponentsComponent } from './components/components.component';
 const routes: Routes = [
   {
     path: '',
@@ -26,7 +26,7 @@ const routes: Routes = [
       { path: 'security-control', component: SecurityControlComponent },
       { path: 'security-control/security-equipments', component: SecurityEquipmentsComponent },
       { path: 'security-control/security-equipments/equipment-information/:id_equipo_seguridad', component: EquipmentInformationComponent },
-      { path: 'security-control/security-alert-management', component: SecurityAlertManagementComponent }, // Colocar el cambio de equipos
+      { path: 'security-control/components/:id_equipo_seguridad', component: ComponentsComponent },
       { path: 'security-control/inspection', component: InspectionComponent },
 
       { path: '**', component: HomeComponent },
