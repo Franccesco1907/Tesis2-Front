@@ -101,4 +101,8 @@ export class EquipmentInformationComponent implements OnInit {
       }
     );
   }
+
+  seePlanAction() {
+
+  }
 }

@@ -153,13 +153,20 @@
       </div>
     </form>
 
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-between">
       <button
         type="submit"
-        class="btn btn-primary equipment--background"
+        class="btn btn-secondary"
         (click)="close()"
       >
         Cerrar
+      </button>
+      <button
+        type="submit"
+        class="btn btn-primary equipment--background"
+        (click)="seePlanAction()"
+      >
+        Ver Plan de acción
       </button>
     </div>
   </div>

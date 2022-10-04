@@ -31,4 +31,8 @@ export class NavbarComponent implements OnInit {
   redirectTo(path: string) {
     this.router.navigate([path]);
   }
+
+  logout() {
+    console.log("ramon")
+  }
 }
