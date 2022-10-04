@@ -38,8 +38,18 @@ export class ModalEnterComponent implements OnInit {
     setTimeout(() => {
       let scanRef = document.getElementById('scan') as HTMLVideoElement;
       console.log("scanRef", scanRef);
-      this.qrScanner = new QrScanner(scanRef, result => console.log('decoded qr code:', result));
+      this.qrScanner = new QrScanner(scanRef, result => this.seeComponents(result));
       this.qrScanner.start();
     }, 1000)
+  }
+
+  seeComponents(result : string) {
+    console.log('decoded qr code:', result, result.split('=')[1]);
+    this.qrScanner.stop();
+    // Formato de lectura de QR es: id=1
+    let id_equipo_seguridad = result.split('=')[1];
+    setTimeout(()=>{
+      this.router.navigate(['security-control', 'components', id_equipo_seguridad])
+    }, 1000);
   }
 }

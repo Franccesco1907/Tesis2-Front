@@ -1,22 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-dark navbar--background">
+<nav class="navbar navbar-expand-lg navbar-dark navbar--background m-0 p-0">
   <div class="container-fluid">
-    <a class="navbar-brand header" href="#"
-      ><span style="font-size: medium">{{ name }}</span></a
-    >
-    <a class="navbar-brand header" href="#"
-      ><span style="font-size: small">{{ role }}</span></a
-    >
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="row">
+      <div class="col-10">
+        <div class="row">
+          <a class="navbar-brand header" href="#"
+            ><span style="font-size: 0.9rem;">{{ name }}</span></a
+          >
+        </div>
+        <div class="row">
+          <a class="navbar-brand header" href="#"
+            ><span style="font-size: 0.9rem;">{{ role }} | {{ sector }}</span></a
+          >
+        </div>
+      </div>
+      <div class="col-2" style="margin-top: 1.1rem; padding-left: 1rem;">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">

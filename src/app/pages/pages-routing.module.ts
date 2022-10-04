@@ -12,7 +12,12 @@ import { SecurityEquipmentsComponent } from './security-equipments/security-equi
 import { SecurityRiskTrackingComponent } from './security-risk-tracking/security-risk-tracking.component';
 import { UpdateTrackingRiskComponent } from './update-tracking-risk/update-tracking-risk.component';
 import { ComponentsComponent } from './components/components.component';
+import { LoginComponent } from './login/login.component';
 const routes: Routes = [
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
   {
     path: '',
     component: InitPageComponent,

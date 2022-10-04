@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { PersonalProtectiveEquipmentService } from 'src/app/core/services/personalProtectiveEquipment.service';
+import { TokenStorageService } from 'src/app/core/services/tokenStorage.service';
 
 @Component({
   selector: 'app-inspection',
@@ -11,16 +12,20 @@ import { PersonalProtectiveEquipmentService } from 'src/app/core/services/person
 export class InspectionComponent implements OnInit {
   navigationExtras: any;
   personalProtectiveEquipments: any;
+  user: any;
+
   constructor(
     private router: Router,
     private personalProtectiveEquipmentService: PersonalProtectiveEquipmentService,
-    private notificationService: ToastrService
+    private notificationService: ToastrService,
+    private tokenStorageService: TokenStorageService
   ) {
     this.navigationExtras = this.router.getCurrentNavigation()?.extras;
     console.log('inspec', this.navigationExtras);
   }
 
   ngOnInit() {
+    this.user = this.tokenStorageService.getUser();
     this.personalProtectiveEquipmentService
       .getPersonalProtectiveEquipments(this.navigationExtras.id_zone)
       .subscribe((data) => {
@@ -38,7 +43,7 @@ export class InspectionComponent implements OnInit {
           this.personalProtectiveEquipments[i].id_equipo_proteccion_personal,
         checked: inputs[i].checked,
         id_zone: this.navigationExtras.id_zone,
-        id_user: 1
+        id_user: this.user.id_usuario
       });
     }
     this.personalProtectiveEquipmentService.createHistory(history).subscribe(

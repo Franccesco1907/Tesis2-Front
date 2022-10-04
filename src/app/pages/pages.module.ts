@@ -15,6 +15,7 @@ import { SecurityEquipmentsComponent } from './security-equipments/security-equi
 import { InspectionComponent } from './inspection/inspection.component';
 import { EquipmentInformationComponent } from './equipment-information/equipment-information.component';
 import { ComponentsComponent } from './components/components.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ComponentsComponent } from './components/components.component';
     EquipmentInformationComponent,
     InitPageComponent,
     InspectionComponent,
+    LoginComponent,
     RegisterAlertComponent,
     SecurityAlertsComponent,
     SecurityAlertManagementComponent,

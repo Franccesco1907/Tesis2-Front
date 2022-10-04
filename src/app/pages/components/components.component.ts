@@ -41,14 +41,13 @@ export class ComponentsComponent implements OnInit {
     for (let i = 0; i < this.components.length; i++) {
       history.push({
         id_componente: this.components[i].id_componente,
-        checked: inputs[i].checked,
-        id_usuario: 1,
+        checked: inputs[i].checked
       });
     }
-
+    console.log("history", history)
     this.componentService
       .saveComponentsState(
-        { components: history, note: this.textAreaNote },
+        { components: history, note: this.textAreaNote, id_usuario: 1},
         this.idSecurityEquipment
       )
       .subscribe(
