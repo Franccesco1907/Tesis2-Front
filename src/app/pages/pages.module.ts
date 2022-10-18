@@ -16,11 +16,15 @@ import { InspectionComponent } from './inspection/inspection.component';
 import { EquipmentInformationComponent } from './equipment-information/equipment-information.component';
 import { ComponentsComponent } from './components/components.component';
 import { LoginComponent } from './login/login.component';
+import { CapacitationListComponent } from './capacitation-list/capacitation-list.component';
+import { CoursesListComponent } from './courses-list/courses-list.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
+    CapacitationListComponent,
+    CoursesListComponent,
     ComponentsComponent,
     EquipmentInformationComponent,
     InitPageComponent,
@@ -42,6 +46,8 @@ import { LoginComponent } from './login/login.component';
   ],
   exports: [
     HomeComponent,
+    CapacitationListComponent,
+    CoursesListComponent,
     ComponentsComponent,
     EquipmentInformationComponent,
     InspectionComponent,

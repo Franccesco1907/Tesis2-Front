@@ -13,6 +13,10 @@ import { SecurityRiskTrackingComponent } from './security-risk-tracking/security
 import { UpdateTrackingRiskComponent } from './update-tracking-risk/update-tracking-risk.component';
 import { ComponentsComponent } from './components/components.component';
 import { LoginComponent } from './login/login.component';
+import { CapacitationListComponent } from './capacitation-list/capacitation-list.component';
+import { TestListComponent } from './test-list/test-list.component';
+import { CoursesListComponent } from './courses-list/courses-list.component';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
 const routes: Routes = [
   {
     path: 'login',
@@ -33,6 +37,10 @@ const routes: Routes = [
       { path: 'security-control/security-equipments/equipment-information/:id_equipo_seguridad', component: EquipmentInformationComponent },
       { path: 'security-control/components/:id_equipo_seguridad', component: ComponentsComponent },
       { path: 'security-control/inspection', component: InspectionComponent },
+      { path: 'capacitation-list', component: CapacitationListComponent },
+      { path: 'capacitation-list/:id_capacitation/courses-list', component: CoursesListComponent },
+      { path: 'capacitation-list/:id_capacitation/courses-list/:id_course', component: CourseDetailComponent },
+      { path: 'test-list', component: TestListComponent },
 
       { path: '**', component: HomeComponent },
     ],

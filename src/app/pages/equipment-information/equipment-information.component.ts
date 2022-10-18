@@ -25,7 +25,7 @@ export class EquipmentInformationComponent implements OnInit {
     private zoneService: ZoneService,
     private securityEquipmentService: SecurityEquipmentService,
     private activatedRoute: ActivatedRoute,
-    private route: Router
+    private router: Router
   ) {
     this.formSecurityEquipment = this.formBuilder.group({
       cBoxCode: [null, Validators.required],
@@ -93,7 +93,7 @@ export class EquipmentInformationComponent implements OnInit {
   }
 
   close() {
-    this.route.navigate(
+    this.router.navigate(
       ['security-control', 'security-equipments'],
       <any>{
         id_zone: this.formSecurityEquipment.controls['cBoxZone'].value,

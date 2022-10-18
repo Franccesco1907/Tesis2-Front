@@ -1,0 +1,30 @@
+<div class="card m-4 p-4">
+  <h5 class="fw-bold">{{ this.title }}</h5>
+  <table class="table">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">Código</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Ver</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let course of this.courses">
+        <tr>
+          <th scope="row">{{course.id_curso}}</th>
+          <td>{{course.nombre}}</td>
+          <td>
+            <button
+              class="eye-button"
+              [routerLink]="[
+                course.id_curso
+              ]"
+            >
+              <span class="bi bi-eye" style="color: white"></span>
+            </button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

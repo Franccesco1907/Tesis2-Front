@@ -1,0 +1,12 @@
+th, td {
+  font-size: 0.775rem;
+  vertical-align: middle;
+}
+
+.eye-button {
+  background-color: #0E4DA4;
+  border: none;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  outline: none;
+}
