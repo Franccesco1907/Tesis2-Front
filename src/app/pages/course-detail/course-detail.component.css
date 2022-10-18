@@ -2,3 +2,13 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.course-subtitle {
+  font-size: 0.9rem;
+  margin: 0.2rem 0rem;
+}
+
+.course-info {
+  font-size: 0.9rem;
+  margin: 0.2rem 0rem;
+}

@@ -1,6 +1,41 @@
-<div class="card course-detail-container mt-4" style="width: 21rem;">
+<div class="card course-detail-container mt-4" style="width: 21rem">
   <div class="card-body">
-    <h5 class="fw-bold">{{course.nombre}}</h5>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScv261qThl38Q4G1rTmEvIyw5Pv3YX96dA2XnKhhy6W9FXVvA/viewform?usp=sf_link">ra</a>
+    <h5 class="fw-bold mb-4">{{ course.nombre }}</h5>
+    <div class="col">
+      <div class="row">
+        <div class="col-5">
+          <h6 class="card-subtitle lh-1 pb-2 course-subtitle">Código:</h6>
+        </div>
+        <div class="col-7">
+          <p class="card-subtitle lh-1 pb-2 course-info">
+            {{ course.id_curso }}
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-5">
+          <h6 class="card-subtitle lh-1 pb-2 course-subtitle">
+            Fecha de creación:
+          </h6>
+        </div>
+        <div class="col-7">
+          <p class="card-subtitle lh-1 pb-2 course-info">
+            {{ course.fecha_creacion | date: "dd-MM-yyyy" }}
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-5">
+          <h6 class="card-subtitle lh-1 pb-2 course-subtitle">Cuestionario:</h6>
+        </div>
+        <div class="col-7">
+          <a
+            href="{{ course.cuestionario }}"
+            class="card-subtitle lh-1 pb-2 course-info"
+            >Enlace</a
+          >
+        </div>
+      </div>
+    </div>
   </div>
 </div>

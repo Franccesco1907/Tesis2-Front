@@ -18,12 +18,14 @@ import { ComponentsComponent } from './components/components.component';
 import { LoginComponent } from './login/login.component';
 import { CapacitationListComponent } from './capacitation-list/capacitation-list.component';
 import { CoursesListComponent } from './courses-list/courses-list.component';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     CapacitationListComponent,
+    CourseDetailComponent,
     CoursesListComponent,
     ComponentsComponent,
     EquipmentInformationComponent,
@@ -47,6 +49,7 @@ import { CoursesListComponent } from './courses-list/courses-list.component';
   exports: [
     HomeComponent,
     CapacitationListComponent,
+    CourseDetailComponent,
     CoursesListComponent,
     ComponentsComponent,
     EquipmentInformationComponent,
