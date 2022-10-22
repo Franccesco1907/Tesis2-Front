@@ -29,13 +29,34 @@
           <h6 class="card-subtitle lh-1 pb-2 course-subtitle">Cuestionario:</h6>
         </div>
         <div class="col-7">
-          <a
-            href="{{ course.cuestionario }}"
-            class="card-subtitle lh-1 pb-2 course-info"
-            >Enlace</a
-          >
+          <a href="{{ course.cuestionario }}" class="card-subtitle lh-1 pb-2 course-info">Enlace</a>
         </div>
       </div>
+      <ng-container *ngIf="true" class="mt-4">
+        <h5 class="fw-bold mb-4">Materiales del curso</h5>
+        <div class="row mb-4">
+          <h6 class="card-subtitle lh-1 pb-2 course-subtitle">Cuestionario:</h6>
+          <iframe class="mt-2 mb-2" width="560" height="315" src="https://www.youtube.com/embed/ptc4Awb0UpU" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="row mb-4">
+          <h6 class="card-subtitle lh-1 pb-2 course-subtitle">Cuestionario:</h6>
+          <iframe class="mt-2 mb-2" width="560" height="315" src="https://www.youtube.com/embed/ptc4Awb0UpU" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="row mb-4">
+          <h6 class="card-subtitle lh-1 pb-2 course-subtitle">Cuestionario:</h6>
+          <a href="https://www.ilo.org/wcmsp5/groups/public/@americas/@ro-lima/@ilo-buenos_aires/documents/publication/wcms_248685.pdf">Pdf</a>
+        </div>
+
+      </ng-container>
+
     </div>
   </div>
 </div>
