@@ -1,3 +1,32 @@
-<p>
-  test-list works!
-</p>
+<div class="card m-4 p-4">
+  <h5 class="fw-bold">{{ this.title }}</h5>
+
+  <ng-container *ngFor="let capacitation of this.tests">
+    <h6 class="fw-bold">{{ capacitation.nombre }}</h6>
+    <ng-container *ngIf="capacitation.cuestionarios.length != 0; else testsCompleted">
+      <table class="table">
+        <thead class="table-light">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Nota</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let test of capacitation.cuestionarios">
+            <tr>
+              <td>{{ test.nombre }}</td>
+              <td>{{ test.nota }}</td>
+              <td>{{ test.estado == "A" ? "Por aprobar" : "Aprobado" }}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </ng-container>
+    <ng-template #testsCompleted>
+      <div>
+        Las pruebas ya fueron contestadas y aprobadas
+      </div>
+    </ng-template>
+  </ng-container>
+</div>

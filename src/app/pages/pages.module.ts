@@ -19,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { CapacitationListComponent } from './capacitation-list/capacitation-list.component';
 import { CoursesListComponent } from './courses-list/courses-list.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { TestListComponent } from './test-list/test-list.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
     InspectionComponent,
     LoginComponent,
     RegisterAlertComponent,
+    TestListComponent,
     SecurityAlertsComponent,
     SecurityAlertManagementComponent,
     SecurityControlComponent,
@@ -56,6 +58,7 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
     InspectionComponent,
     PagesRoutingModule,
     RegisterAlertComponent,
+    TestListComponent,
     SecurityAlertsComponent,
     SecurityControlComponent,
     SecurityEquipmentsComponent,
