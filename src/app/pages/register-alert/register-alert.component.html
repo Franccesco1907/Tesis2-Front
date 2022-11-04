@@ -1,26 +1,48 @@
-<div class="card register-container mt-4" style="width: 21rem;">
+<div class="card register-container mt-4" style="width: 21rem">
   <div class="card-body">
     <h5 class="fw-bold">Registro de alertas</h5>
     <form action="" id="alertForm" [formGroup]="formAlert">
       <div class="mb-3">
         <label for="code" class="form-label">Código</label>
-        <input type="text" class="form-control" id="code" placeholder="Código" disabled />
+        <input
+          type="text"
+          class="form-control"
+          id="code"
+          placeholder="Código"
+          disabled
+        />
       </div>
       <div class="mb-3">
         <label for="incident" class="form-label">Incidente</label>
-        <input type="text" class="form-control" id="incident" placeholder="Incidente" formControlName="inputIncident"
-          required />
+        <input
+          type="text"
+          class="form-control"
+          id="incident"
+          placeholder="Incidente"
+          formControlName="inputIncident"
+          required
+        />
       </div>
       <div class="mb-3">
         <label for="severity" class="form-label">Afectado</label>
-        <select class="form-select" aria-label="Seleccione" formControlName="cBoxUserAffected">
+        <select
+          class="form-select"
+          aria-label="Seleccione"
+          formControlName="cBoxUserAffected"
+        >
           <option disabled selected value="0" hidden>Seleccione</option>
-          <option *ngFor="let user of this.users" [value]="user.id_usuario"> {{user.nombres}} </option>
+          <option *ngFor="let user of this.users" [value]="user.id_usuario">
+            {{ user.nombres }}
+          </option>
         </select>
       </div>
       <div class="mb-3">
         <label for="severity" class="form-label">Gravedad</label>
-        <select class="form-select" aria-label="Seleccione" formControlName="cBoxSeverity">
+        <select
+          class="form-select"
+          aria-label="Seleccione"
+          formControlName="cBoxSeverity"
+        >
           <option disabled selected value="0" hidden>Seleccione</option>
           <option value="LEVE">Leve</option>
           <option value="GRAVE">Grave</option>
@@ -29,29 +51,80 @@
       </div>
       <div class="mb-3">
         <label for="sector" class="form-label">Sector</label>
-        <select class="form-select" aria-label="Seleccione" formControlName="cBoxSector">
+        <select
+          class="form-select"
+          aria-label="Seleccione"
+          formControlName="cBoxSector"
+        >
           <option disabled selected value="0" hidden>Seleccione</option>
-          <option *ngFor="let sector of this.sectors" [value]="sector.id_sector"> {{sector.nombre}} </option>
+          <option
+            *ngFor="let sector of this.sectors"
+            [value]="sector.id_sector"
+          >
+            {{ sector.nombre }}
+          </option>
         </select>
       </div>
       <div class="mb-3">
         <label for="zone" class="form-label">Zona</label>
-        <select class="form-select" aria-label="Seleccione" formControlName="cBoxZone">
+        <select
+          class="form-select"
+          aria-label="Seleccione"
+          formControlName="cBoxZone"
+        >
           <option disabled selected value="0" hidden>Seleccione</option>
-          <option *ngFor="let zone of this.zones" [value]="zone.id_zona"> {{zone.nombre}} </option>
+          <option *ngFor="let zone of this.zones" [value]="zone.id_zona">
+            {{ zone.nombre }}
+          </option>
         </select>
       </div>
       <div class="mb-3">
         <label for="description" class="form-label">Descripción</label>
-        <textarea class="form-control" id="description" rows="3" formControlName="textAreaDescription"></textarea>
+        <textarea
+          class="form-control"
+          id="description"
+          rows="3"
+          formControlName="textAreaDescription"
+        ></textarea>
       </div>
-      <!-- <div class="input-group mb-3">
+      <div class="input-group mb-3 d-grid gap-2">
+        <button
+          class="btn upload--background d-flex justify-content-center"
+          type="file"
+          capture="camera"
+          accept="image/*"
+          id="file"
+          capture="camera"
+          accept="image/*"
+          (click)="activeCamara()"
+        >
+          <b>Subir evidencia</b> <i class="bi bi-upload"></i>
+        </button>
+        <input
+          type="file"
+          capture="camera"
+          accept="image/*"
+          id="input-file"
+          capture="camera"
+          accept="image/*"
+          (change)="loadFile()"
+          hidden
+        />
+      </div>
+    </form>
+    <!-- <div class="input-group mb-3">
         <input type="file" id="file" capture="camera" accept="image/*">
       </div> -->
-    </form>
 
     <div class="d-flex justify-content-center">
-      <button type="submit" class="btn btn-primary register--background" [disabled]="formAlert.invalid" (click)="registerAlert()">Registrar</button>
+      <button
+        type="submit"
+        class="btn btn-primary register--background"
+        [disabled]="formAlert.invalid"
+        (click)="registerAlert()"
+      >
+        Registrar
+      </button>
     </div>
   </div>
 </div>

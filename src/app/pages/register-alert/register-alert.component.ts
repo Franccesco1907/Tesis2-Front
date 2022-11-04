@@ -18,6 +18,7 @@ export class RegisterAlertComponent implements OnInit {
   sectors: any;
   zones: any;
   alerts: any;
+  photo:boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -99,5 +100,18 @@ export class RegisterAlertComponent implements OnInit {
         );
       }
     );
+  }
+
+  activeCamara() {
+    document.getElementById('input-file')?.click();
+  }
+
+  loadFile() {
+    this.notificationService.success(
+      '¡Se ha subido la imagen exitosamente!',
+      '¡CARGADO!',
+      { positionClass: 'toast-top-center' }
+    );
+    // https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
   }
 }
