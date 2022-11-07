@@ -17,6 +17,8 @@ import { CapacitationListComponent } from './capacitation-list/capacitation-list
 import { TestListComponent } from './test-list/test-list.component';
 import { CoursesListComponent } from './courses-list/courses-list.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { InspectionListComponent } from './inspection-list/inspection-list.component';
+import { InspectionDetailComponent } from './inspection-detail/inspection-detail.component';
 const routes: Routes = [
   {
     path: 'login',
@@ -37,6 +39,8 @@ const routes: Routes = [
       { path: 'security-control/security-equipments/equipment-information/:id_equipo_seguridad', component: EquipmentInformationComponent },
       { path: 'security-control/components/:id_equipo_seguridad', component: ComponentsComponent },
       { path: 'security-control/inspection', component: InspectionComponent },
+      { path: 'security-control/inspection-list', component: InspectionListComponent },
+      { path: 'security-control/inspection-list/:date_hour', component: InspectionDetailComponent },
       { path: 'capacitation-list', component: CapacitationListComponent },
       { path: 'capacitation-list/:id_capacitation/courses-list', component: CoursesListComponent },
       { path: 'capacitation-list/:id_capacitation/courses-list/:id_course', component: CourseDetailComponent },

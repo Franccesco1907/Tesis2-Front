@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TokenStorageService } from 'src/app/core/services/tokenStorage.service';
 
 @Component({
   selector: 'app-security-control',
@@ -11,10 +12,12 @@ export class SecurityControlComponent implements OnInit {
   titleChangeEquipment = 'Cambio de equipos';
   titleInspection = "Inspección de EPP's";
   titleModal: string = '';
+  user: any;
+  constructor(private router: Router, private tokenService: TokenStorageService) {}
 
-  constructor(private router: Router) {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.user = this.tokenService.getUser();
+  }
 
   openModal(title: string) {
     this.titleModal = title;
@@ -24,7 +27,9 @@ export class SecurityControlComponent implements OnInit {
     if (event.title == this.titleSecurityEquipments) {
       this.router.navigate(['security-control', 'security-equipments'], event);
     } else if (event.title == this.titleInspection) {
-      this.router.navigate(['security-control', 'inspection'], event);
+      if(this.user.nombre_rol != 'Seguridad')
+        this.router.navigate(['security-control', 'inspection'], event);
+      else this.router.navigate(['security-control', 'inspection-list'], event);
     }
   }
 }

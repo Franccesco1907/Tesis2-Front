@@ -20,6 +20,8 @@ import { CapacitationListComponent } from './capacitation-list/capacitation-list
 import { CoursesListComponent } from './courses-list/courses-list.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { TestListComponent } from './test-list/test-list.component';
+import { InspectionListComponent } from './inspection-list/inspection-list.component';
+import { InspectionDetailComponent } from './inspection-detail/inspection-detail.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { TestListComponent } from './test-list/test-list.component';
     EquipmentInformationComponent,
     InitPageComponent,
     InspectionComponent,
+    InspectionDetailComponent,
+    InspectionListComponent,
     LoginComponent,
     RegisterAlertComponent,
     TestListComponent,
@@ -56,6 +60,8 @@ import { TestListComponent } from './test-list/test-list.component';
     ComponentsComponent,
     EquipmentInformationComponent,
     InspectionComponent,
+    InspectionDetailComponent,
+    InspectionListComponent,
     PagesRoutingModule,
     RegisterAlertComponent,
     TestListComponent,

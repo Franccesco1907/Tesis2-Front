@@ -6,6 +6,7 @@ import { UserService } from 'src/app/core/services/user.service';
 import { ZoneService } from 'src/app/core/services/zone.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { UploadService } from 'src/app/core/services/upload.service';
 
 @Component({
   selector: 'app-register-alert',
@@ -26,6 +27,7 @@ export class RegisterAlertComponent implements OnInit {
     private sectorService: SectorService,
     private zoneService: ZoneService,
     private alertService: AlertService,
+    private uploadService: UploadService,
     private notificationService: ToastrService,
     private router: Router
   ) {
@@ -106,12 +108,14 @@ export class RegisterAlertComponent implements OnInit {
     document.getElementById('input-file')?.click();
   }
 
-  loadFile() {
+  loadFile(event:any) {
     this.notificationService.success(
       '¡Se ha subido la imagen exitosamente!',
       '¡CARGADO!',
       { positionClass: 'toast-top-center' }
     );
+    console.log("event",event)
+      // this.uploadService.uploadFile()
     // https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
   }
 }

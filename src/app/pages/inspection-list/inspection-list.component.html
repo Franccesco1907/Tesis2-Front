@@ -1,0 +1,32 @@
+<div class="card m-4 p-4">
+  <h5 class="fw-bold">Listado de inspecciones</h5>
+  <table class="table">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Sector</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Ver</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let inspection of this.inspectionList">
+        <tr>
+          <td>{{ inspection.full_name }}</td>
+          <td>{{ inspection.sector_name }}</td>
+          <td>{{ inspection.date_hour | date:'dd-MM-yyyy' }}</td>
+          <td>
+            <button
+              class="eye-button"
+              [routerLink]="[
+                inspection.date_hour
+              ]"
+            >
+              <span class="bi bi-eye" style="color: white"></span>
+            </button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,34 @@
+<div class="card inspection-container mt-4" style="width: 21rem">
+  <div class="card-body">
+    <h5 class="fw-bold">Inspección de EPP's</h5>
+    <div class="col">
+      <table class="table">
+        <thead class="table-light">
+          <tr>
+            <th scope="col">Equipo</th>
+            <th scope="col">¿En uso?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let personalProtectiveEquipment of personalProtectiveEquipments;
+              let i = index
+            "
+          >
+            <td>{{ personalProtectiveEquipment.nombre }}</td>
+            <td>
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="{{ 'checkbox' + i }}"
+                [(ngModel)]="personalProtectiveEquipment.utilizado"
+                disabled
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

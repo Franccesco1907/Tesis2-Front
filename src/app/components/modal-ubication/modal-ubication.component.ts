@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SectorService } from 'src/app/core/services/sector.service';
+import { TokenStorageService } from 'src/app/core/services/tokenStorage.service';
 import { ZoneService } from 'src/app/core/services/zone.service';
 
 @Component({
@@ -12,6 +13,9 @@ export class ModalUbicationComponent implements OnInit {
   formUbication: FormGroup;
   sectors: any;
   zones: any;
+  isPersonalSecurity: boolean = false;
+  hideCboxZone: boolean = false;
+  user : any;
   @Input() title: string = '';
   @Input() imageUrl: string = '';
   @Output() accept: EventEmitter<any> = new EventEmitter<any>();
@@ -19,7 +23,8 @@ export class ModalUbicationComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private sectorService: SectorService,
-    private zoneService: ZoneService
+    private zoneService: ZoneService,
+    private tokenService: TokenStorageService
   ) {
     this.formUbication = this.formBuilder.group({
       cBoxSector: [null, Validators.required],
@@ -28,6 +33,10 @@ export class ModalUbicationComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.user = this.tokenService.getUser();
+    console.log("user", this.user)
+    if(this.user.nombre_rol == 'Seguridad')
+      this.isPersonalSecurity = true;
     this.fillCboxSector();
     this.onChangeCboxSector();
   }
@@ -36,7 +45,7 @@ export class ModalUbicationComponent implements OnInit {
     this.accept.emit({
       title: this.title,
       id_sector: this.formUbication.controls['cBoxSector'].value,
-      id_zone: this.formUbication.controls['cBoxZone'].value
+      id_zone: this.formUbication.controls['cBoxZone'].value,
     });
   }
 
@@ -50,7 +59,12 @@ export class ModalUbicationComponent implements OnInit {
     this.formUbication.controls['cBoxSector'].valueChanges.subscribe(
       (idSectorSelected) => {
         let id_sector = this.formUbication.controls['cBoxSector'].value;
-        this.getZoneByIdSector(id_sector);
+        if (id_sector != 0) {
+          this.hideCboxZone = false;
+          this.getZoneByIdSector(id_sector);
+        } else {
+          this.hideCboxZone = true;
+        }
       }
     );
   }
