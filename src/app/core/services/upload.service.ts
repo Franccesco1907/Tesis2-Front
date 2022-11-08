@@ -11,8 +11,8 @@ export class UploadService {
 
   constructor(private httpClient: HttpClient) {}
 
-  uploadFile(file: any) {
-    const URL = url_base + '/';
+  uploadFile(id_alerta_riesgo: string | number, file: any) {
+    const URL = url_base + '/id_alerta_riesgo=' + id_alerta_riesgo;
     let body = new FormData();
     body.append('ruta', 'uploads');
     body.append('myFile', file.file);

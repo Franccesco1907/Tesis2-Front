@@ -19,7 +19,8 @@ export class RegisterAlertComponent implements OnInit {
   sectors: any;
   zones: any;
   alerts: any;
-  photo:boolean = false;
+  photo: boolean = false;
+  file: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -83,10 +84,15 @@ export class RegisterAlertComponent implements OnInit {
       descripcion: this.formAlert.value.textAreaDescription,
     };
     console.log('alert', alert);
-
     this.alertService.createAlert(alert).subscribe(
       (alert) => {
         (document.getElementById('alertForm') as HTMLFormElement).reset();
+        if(this.file) {
+          console.log("alert", alert, this.file);
+          this.uploadService.uploadFile(alert.id_alerta_riesgo, this.file).subscribe((response) => {
+            console.log("response", response)
+          })
+        }
         this.notificationService.success(
           '¡Se ha registrado exitosamente!',
           '¡REGISTRADO!',
@@ -108,14 +114,22 @@ export class RegisterAlertComponent implements OnInit {
     document.getElementById('input-file')?.click();
   }
 
-  loadFile(event:any) {
-    this.notificationService.success(
-      '¡Se ha subido la imagen exitosamente!',
-      '¡CARGADO!',
-      { positionClass: 'toast-top-center' }
-    );
-    console.log("event",event)
-      // this.uploadService.uploadFile()
+  loadFile(event: any) {
+    if (event.target.files) {
+      const [file] = event.target.files;
+      this.file = {
+        file: file,
+        filename: file.name,
+      };
+      this.notificationService.success(
+        '¡Se ha subido la imagen exitosamente!',
+        '¡CARGADO!',
+        { positionClass: 'toast-top-center' }
+      );
+      console.log('event', event);
+    }
+
+    // this.uploadService.uploadFile()
     // https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
   }
 }

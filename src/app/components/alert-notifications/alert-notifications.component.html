@@ -80,16 +80,15 @@
         </div>
       </div>
       <!-- Botones -->
-      <!-- <button type="button" class="edit-button">
-        <span class="bi bi-pencil-fill" style="color: white"></span>
-      </button>
       <button
-        class="mitigate-button"
-        data-bs-toggle="modal"
-        data-bs-target="#modalComponent"
+        type="button"
+        class="eye-button"
+        *ngIf="alert.ubicacion"
+        (click)="seeEvidence()"
+        target="_blank"
       >
-        <span class="bi bi-volume-mute-fill" style="color: white"></span>
-      </button> -->
+        <span class="bi bi-eye" style="color: white">Ver evidencia</span>
+      </button>
     </div>
 
     <app-modal

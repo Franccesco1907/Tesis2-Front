@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  url_base: 'http://localhost:3000/dev/api/v1'
+  url_base: 'http://localhost:3000/dev/api/v1',
+  base_file: 'http://localhost:3000/uploads'
 };
 
 /*
