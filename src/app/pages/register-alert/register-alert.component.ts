@@ -85,11 +85,11 @@ export class RegisterAlertComponent implements OnInit {
     };
     console.log('alert', alert);
     this.alertService.createAlert(alert).subscribe(
-      (alert) => {
+      async (alert) => {
         (document.getElementById('alertForm') as HTMLFormElement).reset();
         if(this.file) {
           console.log("alert", alert, this.file);
-          this.uploadService.uploadFile(alert.id_alerta_riesgo, this.file).subscribe((response) => {
+          await this.uploadService.uploadFile(alert.id_alerta_riesgo, this.file).subscribe((response) => {
             console.log("response", response)
           })
         }
